@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabTypeConnect = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabTypeConnect.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -184,6 +186,7 @@
             this.btnShareScreen2.TabIndex = 10;
             this.btnShareScreen2.Text = "Share your screen";
             this.btnShareScreen2.UseVisualStyleBackColor = true;
+            this.btnShareScreen2.Click += new System.EventHandler(this.btnShareScreen2_Click);
             // 
             // btnConnect2
             // 
@@ -193,6 +196,7 @@
             this.btnConnect2.TabIndex = 9;
             this.btnConnect2.Text = "Connect";
             this.btnConnect2.UseVisualStyleBackColor = true;
+            this.btnConnect2.Click += new System.EventHandler(this.btnConnect2_Click);
             // 
             // txtHeight2
             // 
@@ -267,6 +271,11 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Connect To Other";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 40;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,5 +317,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

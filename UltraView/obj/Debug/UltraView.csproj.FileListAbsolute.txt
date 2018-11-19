@@ -31,25 +31,3 @@ E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\3_FullTmp\UltraView\obj\Debug\U
 E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\3_FullTmp\UltraView\obj\Debug\UltraView.csproj.CoreCompileInputs.cache
 E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\3_FullTmp\UltraView\obj\Debug\UltraView.exe
 E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\3_FullTmp\UltraView\obj\Debug\UltraView.pdb
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\1_Main form and server\UltraView\bin\Debug\UltraView.exe.config
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\1_Main form and server\UltraView\bin\Debug\UltraView.exe
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\1_Main form and server\UltraView\bin\Debug\UltraView.pdb
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\1_Main form and server\UltraView\obj\Debug\UltraView.csprojResolveAssemblyReference.cache
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\1_Main form and server\UltraView\obj\Debug\UltraView.MainForm.resources
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\1_Main form and server\UltraView\obj\Debug\UltraView.RemoteScreenForm.resources
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\1_Main form and server\UltraView\obj\Debug\UltraView.Properties.Resources.resources
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\1_Main form and server\UltraView\obj\Debug\UltraView.csproj.GenerateResource.Cache
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\1_Main form and server\UltraView\obj\Debug\UltraView.csproj.CoreCompileInputs.cache
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\1_Main form and server\UltraView\obj\Debug\UltraView.exe
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\1_Main form and server\UltraView\obj\Debug\UltraView.pdb
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NOPDOAN_GITHUB\GiaiDoan1\LTTQ_NhomTripleT\UltraView\bin\Debug\UltraView.exe.config
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NOPDOAN_GITHUB\GiaiDoan1\LTTQ_NhomTripleT\UltraView\bin\Debug\UltraView.exe
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NOPDOAN_GITHUB\GiaiDoan1\LTTQ_NhomTripleT\UltraView\bin\Debug\UltraView.pdb
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NOPDOAN_GITHUB\GiaiDoan1\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.csprojResolveAssemblyReference.cache
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NOPDOAN_GITHUB\GiaiDoan1\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.MainForm.resources
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NOPDOAN_GITHUB\GiaiDoan1\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.RemoteScreenForm.resources
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NOPDOAN_GITHUB\GiaiDoan1\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.Properties.Resources.resources
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NOPDOAN_GITHUB\GiaiDoan1\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.csproj.GenerateResource.Cache
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NOPDOAN_GITHUB\GiaiDoan1\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.csproj.CoreCompileInputs.cache
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NOPDOAN_GITHUB\GiaiDoan1\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.exe
-E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NOPDOAN_GITHUB\GiaiDoan1\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.pdb
