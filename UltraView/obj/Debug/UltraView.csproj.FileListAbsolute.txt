@@ -23,3 +23,17 @@ D:\Năm 2\UltraView\UltraView\bin\Debug\Newtonsoft.Json.dll
 D:\Năm 2\UltraView\UltraView\bin\Debug\Newtonsoft.Json.xml
 D:\Năm 2\UltraView\UltraView\obj\Debug\UltraView.csproj.CopyComplete
 D:\Năm 2\UltraView\UltraView\obj\Debug\UltraView.csprojAssemblyReference.cache
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\bin\Debug\UltraView.exe.config
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\bin\Debug\UltraView.exe
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\bin\Debug\UltraView.pdb
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\bin\Debug\Newtonsoft.Json.dll
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\bin\Debug\Newtonsoft.Json.xml
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.csprojAssemblyReference.cache
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.MainForm.resources
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.RemoteScreenForm.resources
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.Properties.Resources.resources
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.csproj.GenerateResource.cache
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.csproj.CopyComplete
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.exe
+C:\Users\USER\Documents\GitHub\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.pdb

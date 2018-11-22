@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
@@ -74,6 +75,7 @@ namespace UltraView
                 return;
             }
             new RemoteScreenForm(port).Show();
+            Writelogfile("Open connect Port:" + port+" " + DateTime.Now.ToShortTimeString());
             RemoteScreenFormCount++;
         }
         #endregion
@@ -132,6 +134,7 @@ namespace UltraView
                 portNumber = int.Parse(txtPort2.Text);
                 client.Connect(txtIP2.Text, portNumber);
                 MessageBox.Show("Connected!");
+                Writelogfile("Ket noi toi thiet bi:\n" + "IP: " + txtMyIP.Text + "\t Port: " + txtMyPort.Text+DateTime.Now.ToShortTimeString());
             }
             catch (Exception)
             {
@@ -142,6 +145,7 @@ namespace UltraView
         //Share screen 
         private void btnShareScreen2_Click(object sender, EventArgs e)
         {
+            
             if (txtWidth2.Text != "" || txtHeight2.Text != "")
             {
                 try
@@ -230,6 +234,44 @@ namespace UltraView
            
         }
 
+       
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Nhóm lập trình trực quan Triple T: Nguyễn Anh Tấn 1752                       Lộc Đức Thắng 17520039                                                                          Nguyễn Văn Tuấn 17521218");
+        }
+
+        string logName = "Theodoihoatdong " +"Tháng "+ DateTime.Now.Month.ToString() + ".txt";
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+            if (!Directory.Exists(@"D:\Ultraview"))
+            {
+                Directory.CreateDirectory(@"D:\Ultraview");
+            }
+            if (!Directory.Exists(@"D:\Ultraview\Theodoinguoidung"))
+            {
+                Directory.CreateDirectory(@"D:\Ultraview\Theodoinguoidung");
+            }
+            Writelogfile(DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
+        }
+        public void Writelogfile(string log)
+        {
+
+
+
+
+            FileStream fs = new FileStream(@"D:\Ultraview\Theodoinguoidung\" + logName, FileMode.Append, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine(log);
+            sw.Close();
+            fs.Close();
+        }
         private void Vietnames_Click(object sender, EventArgs e)
         {
 
@@ -271,24 +313,10 @@ namespace UltraView
             exitToolStripMenuItem.Text = "Exit";
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Nhóm lập trình trực quan Triple T: Nguyễn Anh Tấn 1752                       Lộc Đức Thắng 17520039                                                                          Nguyễn Văn Tuấn 17521218");
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
-    
 
 
-       
-    }
+
+
+}
 

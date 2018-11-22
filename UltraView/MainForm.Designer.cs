@@ -421,6 +421,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "Untraview";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.appdata)).EndInit();
             this.tabTypeConnect.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
