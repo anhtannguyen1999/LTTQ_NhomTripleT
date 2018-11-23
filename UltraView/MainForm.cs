@@ -8,8 +8,10 @@ using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -81,7 +83,7 @@ namespace UltraView
         #endregion
 
         //Tab2_Connect to other device
-        #region Tab2_Connect to other device
+        #region Tab2_Connect to other device_Có sửa đổi
         private readonly TcpClient client = new TcpClient();
         private NetworkStream ostream;
         private int portNumber;
@@ -98,8 +100,8 @@ namespace UltraView
         }
         private Image CaptureScreen()
         {
-            height = GetDpiSafeResolution().Height + 215;
-            width = GetDpiSafeResolution().Width + 385;
+            height = GetDpiSafeResolution().Height;//Đã sửa
+            width = GetDpiSafeResolution().Width;//Đã sửa
             Rectangle bounds = new Rectangle(0, 0, width, height);
             Bitmap screenShot = new Bitmap(bounds.Width, bounds.Height, PixelFormat.Format32bppArgb);
             Graphics graphics = Graphics.FromImage(screenShot);
@@ -145,7 +147,6 @@ namespace UltraView
         //Share screen 
         private void btnShareScreen2_Click(object sender, EventArgs e)
         {
-            
             if (txtWidth2.Text != "" || txtHeight2.Text != "")
             {
                 try
@@ -163,11 +164,13 @@ namespace UltraView
             {
                 timer1.Start();
                 btnShareScreen2.Text = "Stop sharing";
+                StartListenText();//Listen texxt
             }
             else
             {
                 timer1.Stop();
                 btnShareScreen2.Text = "Share my screen";
+                //StopListenText();//Stop listen
             }
         }
         //đếm giờ, cài tick của nó khoảng 40 là vừa 
@@ -175,17 +178,10 @@ namespace UltraView
         {
             SendDesktopImage();
         }
-
-
-
-
-
-
-
-
-
+        
         #endregion
 
+        #region Tuan_Menu_and_Ghilog
         private void Vietnames_CheckedChanged(object sender, EventArgs e)
         {
             
@@ -292,7 +288,6 @@ namespace UltraView
             helpToolStripMenuItem.Text = "Trợ giúp";
             exitToolStripMenuItem.Text = "Thoát";
         }
-
         private void English_Click(object sender, EventArgs e)
         {
             btnConnect2.Text = "Connect";
@@ -312,11 +307,107 @@ namespace UltraView
             helpToolStripMenuItem.Text = "Help";
             exitToolStripMenuItem.Text = "Exit";
         }
+        #endregion
 
+        #region ReceiveClick
+        private Thread ListeningToText;
+        private NetworkStream instream;
+
+        //import thu vien de xu ly click
+        [DllImport("user32.dll")]
+        static extern void mouse_event(uint dwFlags, int dx, int dy, uint dwData, int dwExtraInfo);
+        const uint MOUSEEVENTF_LEFTDOWN = 0x0002;
+        const uint MOUSEEVENTF_LEFTUP = 0x0004;
+        const uint MOUSEEVENTF_MIDDLEDOWN = 0x0020;
+        const uint MOUSEEVENTF_MIDDLEUP = 0x0040;
+        const uint MOUSEEVENTF_RIGHTDOWN = 0x0008;
+        const uint MOUSEEVENTF_RIGHTUP = 0x0010;
+
+        private void StartListenText() //btnShareScreen2_Click
+        {
+            ListeningToText = new Thread(ReceiveText);
+            ListeningToText.Start();
+        }
+        private void StopListenText()//btnShareScreen2_Click
+        {
+            if (ListeningToText!=null&&ListeningToText.IsAlive)
+                ListeningToText.Abort();
+        }
+        
+        private void ReceiveText()
+        {
+            BinaryFormatter binFormatter = new BinaryFormatter();
+            while (client.Connected)
+            {
+                try
+                {
+                    instream = client.GetStream();
+                    string str=(String)binFormatter.Deserialize(instream);
+                    string[] strArr = str.Split(':');
+
+                    #region Xu ly click
+                    int x = (int)(width * Int32.Parse(strArr[1]) / Int32.Parse(strArr[3]));
+                    int y = (int)(height * Int32.Parse(strArr[2]) / Int32.Parse(strArr[4]));
+                    switch (strArr[0])
+                    {
+                        case "MM"://mouse move
+                            {
+                                Cursor.Position = new Point(x, y);
+                            }
+                            break;
+                        case "LD"://left down
+                            {
+                                Cursor.Position = new Point(x, y);
+                                mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+                            }
+                            break;
+                        case "LU"://left up
+                            {
+                                Cursor.Position = new Point(x, y);
+                                mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                            }
+                            break;
+                        case "RC"://right click
+                            {
+                                Cursor.Position = new Point(x, y);
+                                mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
+                            }
+                            break;
+                        case "MC"://Middle click
+                            {
+                                Cursor.Position = new Point(x, y);
+                                mouse_event(MOUSEEVENTF_MIDDLEDOWN | MOUSEEVENTF_MIDDLEUP, 0, 0, 0, 0);
+                            }
+                            break;
+                        case "LC": //left click
+                            {
+                                Cursor.Position = new Point(x, y);
+                                mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                            }
+                            break;
+                        case "DL"://double left click
+                            {
+                                Cursor.Position = new Point(x, y);
+                                mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                                mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                            }
+                            break;
+                        case "DR"://double right click
+                            {
+                                mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
+                                mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                      
+                    #endregion
+                }
+                catch { }
+            }
+        }
+        #endregion
     }
-
-
-
-
 }
 

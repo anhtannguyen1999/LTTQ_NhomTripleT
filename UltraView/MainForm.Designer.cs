@@ -64,12 +64,15 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.appdataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.appDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lbStatus = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.appdata)).BeginInit();
             this.tabTypeConnect.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appdataBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataBindingSource)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -86,11 +89,10 @@
             // 
             this.tabTypeConnect.Controls.Add(this.tabPage1);
             this.tabTypeConnect.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabTypeConnect.Location = new System.Drawing.Point(0, 33);
-            this.tabTypeConnect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabTypeConnect.Location = new System.Drawing.Point(0, 32);
             this.tabTypeConnect.Name = "tabTypeConnect";
             this.tabTypeConnect.SelectedIndex = 0;
-            this.tabTypeConnect.Size = new System.Drawing.Size(1178, 511);
+            this.tabTypeConnect.Size = new System.Drawing.Size(1047, 418);
             this.tabTypeConnect.TabIndex = 2;
             // 
             // tabPage1
@@ -117,61 +119,54 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(1170, 478);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1039, 389);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Open Connect";
             // 
             // txtHeight2
             // 
-            this.txtHeight2.Location = new System.Drawing.Point(873, 129);
-            this.txtHeight2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtHeight2.Location = new System.Drawing.Point(776, 103);
             this.txtHeight2.Name = "txtHeight2";
-            this.txtHeight2.Size = new System.Drawing.Size(68, 26);
+            this.txtHeight2.Size = new System.Drawing.Size(61, 22);
             this.txtHeight2.TabIndex = 21;
             // 
             // txtWidth2
             // 
-            this.txtWidth2.Location = new System.Drawing.Point(711, 135);
-            this.txtWidth2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtWidth2.Location = new System.Drawing.Point(632, 108);
             this.txtWidth2.Name = "txtWidth2";
-            this.txtWidth2.Size = new System.Drawing.Size(68, 26);
+            this.txtWidth2.Size = new System.Drawing.Size(61, 22);
             this.txtWidth2.TabIndex = 19;
             // 
             // txtPort2
             // 
-            this.txtPort2.Location = new System.Drawing.Point(647, 249);
-            this.txtPort2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPort2.Location = new System.Drawing.Point(575, 199);
             this.txtPort2.Name = "txtPort2";
-            this.txtPort2.Size = new System.Drawing.Size(267, 26);
+            this.txtPort2.Size = new System.Drawing.Size(238, 22);
             this.txtPort2.TabIndex = 16;
             // 
             // txtIP2
             // 
-            this.txtIP2.Location = new System.Drawing.Point(647, 205);
-            this.txtIP2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIP2.Location = new System.Drawing.Point(575, 164);
             this.txtIP2.Name = "txtIP2";
-            this.txtIP2.Size = new System.Drawing.Size(267, 26);
+            this.txtIP2.Size = new System.Drawing.Size(238, 22);
             this.txtIP2.TabIndex = 14;
             // 
             // txtMyIP
             // 
-            this.txtMyIP.Location = new System.Drawing.Point(134, 186);
-            this.txtMyIP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMyIP.Location = new System.Drawing.Point(119, 149);
             this.txtMyIP.Name = "txtMyIP";
             this.txtMyIP.ReadOnly = true;
-            this.txtMyIP.Size = new System.Drawing.Size(205, 26);
+            this.txtMyIP.Size = new System.Drawing.Size(183, 22);
             this.txtMyIP.TabIndex = 1;
             // 
             // txtMyPort
             // 
-            this.txtMyPort.Location = new System.Drawing.Point(134, 258);
-            this.txtMyPort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMyPort.Location = new System.Drawing.Point(119, 206);
             this.txtMyPort.Name = "txtMyPort";
-            this.txtMyPort.Size = new System.Drawing.Size(205, 26);
+            this.txtMyPort.Size = new System.Drawing.Size(183, 22);
             this.txtMyPort.TabIndex = 4;
             this.txtMyPort.Text = "1999";
             // 
@@ -179,9 +174,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Silver;
-            this.label9.Location = new System.Drawing.Point(801, 135);
+            this.label9.Location = new System.Drawing.Point(712, 108);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 20);
+            this.label9.Size = new System.Drawing.Size(49, 17);
             this.label9.TabIndex = 20;
             this.label9.Text = "Height";
             // 
@@ -189,9 +184,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Silver;
-            this.label8.Location = new System.Drawing.Point(643, 138);
+            this.label8.Location = new System.Drawing.Point(572, 110);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 20);
+            this.label8.Size = new System.Drawing.Size(44, 17);
             this.label8.TabIndex = 18;
             this.label8.Text = "Width";
             // 
@@ -199,9 +194,9 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(541, 72);
+            this.label14.Location = new System.Drawing.Point(481, 58);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(467, 25);
+            this.label14.Size = new System.Drawing.Size(404, 20);
             this.label14.TabIndex = 17;
             this.label14.Text = "If you can\'t see full screen please type your screen....";
             // 
@@ -210,9 +205,9 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.LightGray;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(542, 252);
+            this.label7.Location = new System.Drawing.Point(482, 202);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 20);
+            this.label7.Size = new System.Drawing.Size(43, 17);
             this.label7.TabIndex = 15;
             this.label7.Text = "Port:";
             // 
@@ -221,9 +216,9 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Silver;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(532, 205);
+            this.label6.Location = new System.Drawing.Point(473, 164);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 20);
+            this.label6.Size = new System.Drawing.Size(86, 17);
             this.label6.TabIndex = 13;
             this.label6.Text = "Partner IP:";
             // 
@@ -232,19 +227,18 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(641, 30);
+            this.label2.Location = new System.Drawing.Point(570, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(239, 32);
+            this.label2.Size = new System.Drawing.Size(204, 29);
             this.label2.TabIndex = 12;
             this.label2.Text = "Connect To Other";
             // 
             // btnShareScreen2
             // 
             this.btnShareScreen2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnShareScreen2.Location = new System.Drawing.Point(666, 421);
-            this.btnShareScreen2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnShareScreen2.Location = new System.Drawing.Point(592, 327);
             this.btnShareScreen2.Name = "btnShareScreen2";
-            this.btnShareScreen2.Size = new System.Drawing.Size(225, 38);
+            this.btnShareScreen2.Size = new System.Drawing.Size(200, 30);
             this.btnShareScreen2.TabIndex = 11;
             this.btnShareScreen2.Text = "SHARE YOUR SCREEN";
             this.btnShareScreen2.UseVisualStyleBackColor = false;
@@ -257,10 +251,9 @@
             this.btnConnect2.BackgroundImage = global::UltraView.Properties.Resources.ConnectBT;
             this.btnConnect2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnConnect2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnect2.Location = new System.Drawing.Point(680, 313);
-            this.btnConnect2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnConnect2.Location = new System.Drawing.Point(604, 250);
             this.btnConnect2.Name = "btnConnect2";
-            this.btnConnect2.Size = new System.Drawing.Size(200, 65);
+            this.btnConnect2.Size = new System.Drawing.Size(178, 52);
             this.btnConnect2.TabIndex = 10;
             this.btnConnect2.Text = "CONNECT";
             this.btnConnect2.UseVisualStyleBackColor = false;
@@ -269,9 +262,9 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(25, 82);
+            this.label5.Location = new System.Drawing.Point(22, 66);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(380, 55);
+            this.label5.Size = new System.Drawing.Size(338, 44);
             this.label5.TabIndex = 5;
             this.label5.Text = "Waiting other device connect and share screen to your device.";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -282,10 +275,9 @@
             this.btnOpenConnect.BackgroundImage = global::UltraView.Properties.Resources.ConnectBT1;
             this.btnOpenConnect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOpenConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenConnect.Location = new System.Drawing.Point(134, 313);
-            this.btnOpenConnect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOpenConnect.Location = new System.Drawing.Point(119, 250);
             this.btnOpenConnect.Name = "btnOpenConnect";
-            this.btnOpenConnect.Size = new System.Drawing.Size(205, 63);
+            this.btnOpenConnect.Size = new System.Drawing.Size(182, 50);
             this.btnOpenConnect.TabIndex = 6;
             this.btnOpenConnect.Text = "OPEN CONNECT";
             this.btnOpenConnect.UseVisualStyleBackColor = false;
@@ -296,9 +288,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(128, 30);
+            this.label1.Location = new System.Drawing.Point(114, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 32);
+            this.label1.Size = new System.Drawing.Size(168, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Open Connect";
             // 
@@ -307,9 +299,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.LightGray;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(48, 186);
+            this.label3.Location = new System.Drawing.Point(43, 149);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 20);
+            this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "My IP:";
             // 
@@ -318,9 +310,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Silver;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(48, 264);
+            this.label4.Location = new System.Drawing.Point(43, 211);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 20);
+            this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "My Port:";
             // 
@@ -331,7 +323,8 @@
             this.optionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1178, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1047, 32);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -344,7 +337,7 @@
             this.exitToolStripMenuItem});
             this.optionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("optionToolStripMenuItem.Image")));
             this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
-            this.optionToolStripMenuItem.Size = new System.Drawing.Size(104, 29);
+            this.optionToolStripMenuItem.Size = new System.Drawing.Size(91, 28);
             this.optionToolStripMenuItem.Text = "Option";
             // 
             // languagesToolStripMenuItem
@@ -354,14 +347,14 @@
             this.English});
             this.languagesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("languagesToolStripMenuItem.Image")));
             this.languagesToolStripMenuItem.Name = "languagesToolStripMenuItem";
-            this.languagesToolStripMenuItem.Size = new System.Drawing.Size(173, 30);
+            this.languagesToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.languagesToolStripMenuItem.Text = "Language";
             this.languagesToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Vietnames
             // 
             this.Vietnames.Name = "Vietnames";
-            this.Vietnames.Size = new System.Drawing.Size(174, 30);
+            this.Vietnames.Size = new System.Drawing.Size(151, 26);
             this.Vietnames.Text = "Tiếng Việt";
             this.Vietnames.CheckedChanged += new System.EventHandler(this.Vietnames_CheckedChanged);
             this.Vietnames.Click += new System.EventHandler(this.Vietnames_Click);
@@ -369,7 +362,7 @@
             // English
             // 
             this.English.Name = "English";
-            this.English.Size = new System.Drawing.Size(174, 30);
+            this.English.Size = new System.Drawing.Size(151, 26);
             this.English.Text = "English";
             this.English.CheckedChanged += new System.EventHandler(this.English_CheckedChanged);
             this.English.Click += new System.EventHandler(this.English_Click);
@@ -378,14 +371,14 @@
             // 
             this.helpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripMenuItem.Image")));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(173, 30);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(173, 30);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -393,7 +386,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 30);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -401,24 +394,42 @@
             // 
             this.btnUpdate.BackgroundImage = global::UltraView.Properties.Resources.UpdateBT;
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdate.Location = new System.Drawing.Point(129, 0);
+            this.btnUpdate.Location = new System.Drawing.Point(115, 0);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(59, 44);
+            this.btnUpdate.Size = new System.Drawing.Size(52, 35);
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbStatus});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 425);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1047, 25);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(49, 20);
+            this.lbStatus.Text = "Status";
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1178, 544);
+            this.ClientSize = new System.Drawing.Size(1047, 450);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.tabTypeConnect);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "Untraview";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -430,6 +441,8 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appdataBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataBindingSource)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,5 +483,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lbStatus;
     }
 }

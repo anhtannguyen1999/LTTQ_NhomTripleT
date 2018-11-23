@@ -17,14 +17,15 @@ namespace UltraView
 {
     public partial class RemoteScreenForm : Form
     {
+        #region Connect and ReceiveImage
         private readonly int port;
         private TcpClient client;
         private TcpListener server;
         private NetworkStream mainStream;
-
         private readonly Thread Listening;
         private readonly Thread GetImage;
-
+        private Size receivedImageSize;//xét xem có cần k
+        private bool gotten = false;
         public RemoteScreenForm(int Port)
         {
             port = Port;
@@ -34,7 +35,6 @@ namespace UltraView
             MessageBox.Show("Open connection success!");
             InitializeComponent();
         }
-
         private void StartListening()
         {
             try
@@ -67,8 +67,20 @@ namespace UltraView
             {
                 try
                 {
+
                     mainStream = client.GetStream();
-                    picShowScreen.Image = (Image)binFormatter.Deserialize(mainStream);
+                    if (gotten==true)
+                    {
+                        picShowScreen.Image = (Image)binFormatter.Deserialize(mainStream);
+                    }
+                    else
+                    {
+                        Image receivedImage = (Image)binFormatter.Deserialize(mainStream);
+                        picShowScreen.Image = receivedImage;
+                        receivedImageSize.Height = receivedImage.Height;
+                        receivedImageSize.Width = receivedImage.Width;
+                        gotten = true;
+                    }
                 }
                 catch { }               
             }
@@ -78,16 +90,121 @@ namespace UltraView
             base.OnLoad(e);
             server = new TcpListener(IPAddress.Any, port);
             Listening.Start();
+            //Show size on statusbar
+            lbSize.Text = "\tSize: " + picShowScreen.Width + "x" + (picShowScreen.Height);
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
             StopListening();
         }
-       
         private void RemoteScreenForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             MainForm.RemoteScreenFormCount--;
         }
+        #endregion
+
+
+        #region SendClick
+        private NetworkStream ostream;
+        private void sendText(string str)
+        {
+            if(client.Connected)
+            {
+                BinaryFormatter binFormatter = new BinaryFormatter();
+                ostream = client.GetStream();
+                binFormatter.Serialize(ostream, str);
+            }
+        }
+        private void picShowScreen_MouseMove(object sender, MouseEventArgs e)
+        {
+            //Lay toa do
+            int posX = this.PointToClient(Cursor.Position).X;
+            int posY = this.PointToClient(Cursor.Position).Y;
+            lbMouseMove.Text = "\tPoint: " + posX + ":" + posY;
+            sendText("MM:" + posX + ":" + posY + ":" + picShowScreen.Width + ":" + picShowScreen.Height);
+        }
+
+        private void picShowScreen_MouseClick(object sender, MouseEventArgs e)
+        {
+            //Lay toa do
+            int posX = this.PointToClient(Cursor.Position).X;
+            int posY = this.PointToClient(Cursor.Position).Y;
+            //if (e.Button == MouseButtons.Left)
+            //{
+            //    lbStatus.Text = "Left click " + posX + " : " + posY;
+            //    sendText("LC:" + posX + ":" + posY+ ":"+ picShowScreen.Width+":"+ picShowScreen.Height);
+            //}
+            /*else*/ if (e.Button == MouseButtons.Right)
+            {
+                lbStatus.Text = "Right click " + posX + " : " + posY;
+                sendText("RC:" + posX + ":" + posY + ":" + picShowScreen.Width + ":" + picShowScreen.Height);
+            }
+            else if(e.Button==MouseButtons.Middle)
+            {
+                lbStatus.Text = "Middle click " + posX + " : " + posY;
+                sendText("MC:" + posX + ":" + posY + ":" + picShowScreen.Width + ":" + picShowScreen.Height);
+            }
+
+        }
+        private void picShowScreen_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int posX = this.PointToClient(Cursor.Position).X;
+            int posY = this.PointToClient(Cursor.Position).Y;
+            //if (e.Button == MouseButtons.Left)
+            //{
+            //    lbStatus.Text = "Double left click " + posX + " : " + posY;
+            //    sendText("DL:" + posX + ":" + posY + ":" + picShowScreen.Width + ":" + picShowScreen.Height);
+            //}
+            /*else*/ if (e.Button == MouseButtons.Right)
+            {
+                lbStatus.Text = "Double right click " + posX + " : " + posY;
+                sendText("DR:" + posX + ":" + posY + ":" + picShowScreen.Width + ":" + picShowScreen.Height);
+            } 
+        }
+
+        //Giu chuot
+        private void picShowScreen_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Lay toa do
+            int posX = this.PointToClient(Cursor.Position).X;
+            int posY = this.PointToClient(Cursor.Position).Y;
+            if (e.Button == MouseButtons.Left)
+            {
+                lbStatus.Text = "Mouse Left Down " + posX + " : " + posY;
+                sendText("LD:" + posX + ":" + posY + ":" + picShowScreen.Width + ":" + picShowScreen.Height);
+                //richTextBox1.Text += "Mouse Down " + posX + " : " + posY+"\n";
+            }
+        }
+
+        private void picShowScreen_MouseUp(object sender, MouseEventArgs e)
+        {
+            //Lay toa do
+            int posX = this.PointToClient(Cursor.Position).X;
+            int posY = this.PointToClient(Cursor.Position).Y;
+            if (e.Button == MouseButtons.Left)
+            {
+                lbStatus.Text = "Mouse Left Up " + posX + " : " + posY;
+                sendText("LU:" + posX + ":" + posY + ":" + picShowScreen.Width + ":" + picShowScreen.Height);
+                //richTextBox1.Text += "Mouse Up " + posX + " : " + posY+"\n";
+            }
+        }
+
+        #endregion
+        //lam them giu chuot
+        //lam them send key
+        #region Status Strip
+        //label lay picture box size => set gia tri trong OnLoad va SizeChanged
+        private void RemoteScreenForm_SizeChanged(object sender, EventArgs e)
+        {
+            //Show size on statusbar
+            lbSize.Text = "\tSize: " + picShowScreen.Width + "x" + (picShowScreen.Height);
+        }
+
+        //label point =>MouseMove
+        //label status
+        #endregion
+
+        
     }
 }
