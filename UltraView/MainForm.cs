@@ -14,12 +14,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace UltraView
 {
     public partial class MainForm : Form
     {
-       
+
         public MainForm()
         {
             InitializeComponent();
@@ -77,13 +76,14 @@ namespace UltraView
                 return;
             }
             new RemoteScreenForm(port).Show();
-            Writelogfile("Open connect Port:" + port+" " + DateTime.Now.ToShortTimeString());
+            Writelogfile("Open connect Port:" + port + " " + DateTime.Now.ToShortTimeString());
             RemoteScreenFormCount++;
         }
         #endregion
 
         //Tab2_Connect to other device
         #region Tab2_Connect to other device_Có sửa đổi
+
         private readonly TcpClient client = new TcpClient();
         private NetworkStream ostream;
         private int portNumber;
@@ -100,14 +100,15 @@ namespace UltraView
         }
         private Image CaptureScreen()
         {
-            height = GetDpiSafeResolution().Height;//Đã sửa
-            width = GetDpiSafeResolution().Width;//Đã sửa
+            height = (int)(GetDpiSafeResolution().Height*getScalingFactor());//Đã sửa
+            width = (int)(GetDpiSafeResolution().Width*getScalingFactor());//Đã sửa
             Rectangle bounds = new Rectangle(0, 0, width, height);
             Bitmap screenShot = new Bitmap(bounds.Width, bounds.Height, PixelFormat.Format32bppArgb);
             Graphics graphics = Graphics.FromImage(screenShot);
             graphics.CopyFromScreen(bounds.X, bounds.Y, 0, 0, bounds.Size, CopyPixelOperation.SourceCopy);
             return screenShot;
         }
+        //xem xet co xoa k
         private Image CaptureScreen(int width, int height)
         {
             Rectangle bounds = new Rectangle(0, 0, width, height);
@@ -116,6 +117,33 @@ namespace UltraView
             graphics.CopyFromScreen(bounds.X, bounds.Y, 0, 0, bounds.Size, CopyPixelOperation.SourceCopy);
             return screenShot;
         }
+
+        #region Get Scaling of Screen
+        [DllImport("gdi32.dll")]
+        static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
+        public enum DeviceCap
+        {
+            VERTRES = 10,
+            DESKTOPVERTRES = 117,
+
+            // http://pinvoke.net/default.aspx/gdi32/GetDeviceCaps.html
+        }
+
+
+        private float getScalingFactor()
+        {
+            Graphics g = Graphics.FromHwnd(IntPtr.Zero);
+            IntPtr desktop = g.GetHdc();
+            int LogicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.VERTRES);
+            int PhysicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.DESKTOPVERTRES);
+
+            float ScreenScalingFactor = (float)PhysicalScreenHeight / (float)LogicalScreenHeight;
+
+            return ScreenScalingFactor; // 1.25 = 125%
+        }
+        
+        #endregion
+
         private void SendDesktopImage()
         {
             BinaryFormatter binFormatter = new BinaryFormatter();
@@ -136,11 +164,11 @@ namespace UltraView
                 portNumber = int.Parse(txtPort2.Text);
                 client.Connect(txtIP2.Text, portNumber);
                 MessageBox.Show("Connected!");
-                Writelogfile("Ket noi toi thiet bi:\n" + "IP: " + txtMyIP.Text + "\t Port: " + txtMyPort.Text+DateTime.Now.ToShortTimeString());
+                Writelogfile("Ket noi toi thiet bi:\n" + "IP: " + txtMyIP.Text + "\t Port: " + txtMyPort.Text + DateTime.Now.ToShortTimeString());
             }
             catch (Exception)
             {
-               
+
                 MessageBox.Show("Failed to connect...");
             }
         }
@@ -178,59 +206,59 @@ namespace UltraView
         {
             SendDesktopImage();
         }
-        
+
         #endregion
 
         #region Tuan_Menu_and_Ghilog
         private void Vietnames_CheckedChanged(object sender, EventArgs e)
         {
-            
-                btnConnect2.Text = "Kết nối";
-                btnShareScreen2.Text = "Chia sẻ màn hình";
-                btnOpenConnect.Text = "Mở kết nối";
-                label1.Text = "Mở kết nối";
-                label2.Text = "Kết nối tới thiết bị khác";
-                label3.Text = "IP của tôi";
-                label4.Text = "Cổng";
-                label5.Text = "Chờ kết nối và chia sẻ màn hình";
-                label6.Text = "IP đối tác";
-                label7.Text = "Cổng";
-                label14.Text = "Nếu không thể xem đầy màn hình vui lòng nhập kích thước";
-                optionToolStripMenuItem.Text = "Tùy chọn";
-                languagesToolStripMenuItem.Text = "Ngôn ngữ";
-                aboutToolStripMenuItem.Text = "Thông tin";
-                helpToolStripMenuItem.Text = "Trợ giúp";
-                exitToolStripMenuItem.Text = "Thoát";
 
-                this.English.Checked = false;
-          
+            btnConnect2.Text = "Kết nối";
+            btnShareScreen2.Text = "Chia sẻ màn hình";
+            btnOpenConnect.Text = "Mở kết nối";
+            label1.Text = "Mở kết nối";
+            label2.Text = "Kết nối tới thiết bị khác";
+            label3.Text = "IP của tôi";
+            label4.Text = "Cổng";
+            label5.Text = "Chờ kết nối và chia sẻ màn hình";
+            label6.Text = "IP đối tác";
+            label7.Text = "Cổng";
+            label14.Text = "Nếu không thể xem đầy màn hình vui lòng nhập kích thước";
+            optionToolStripMenuItem.Text = "Tùy chọn";
+            languagesToolStripMenuItem.Text = "Ngôn ngữ";
+            aboutToolStripMenuItem.Text = "Thông tin";
+            helpToolStripMenuItem.Text = "Trợ giúp";
+            exitToolStripMenuItem.Text = "Thoát";
+
+            this.English.Checked = false;
+
         }
 
         private void English_CheckedChanged(object sender, EventArgs e)
         {
-           
 
-                btnConnect2.Text = "Connect";
-                btnShareScreen2.Text = "Share your screen";
-                btnOpenConnect.Text = "Open connect";
-                label1.Text = "OPEN CONNECT";
-                label2.Text = "CONECT TTO OTHER ";
-                label3.Text = "MY IP";
-                label4.Text = "Port";
-                label5.Text = "Waiting other device connect and share screen to your device.";
-                label6.Text = "Partner IP";
-                label7.Text = "Port";
-                label14.Text = "If you can't see full screen please type your screen....";
-                optionToolStripMenuItem.Text = "Option";
-                languagesToolStripMenuItem.Text = "Languages";
-                aboutToolStripMenuItem.Text = "About";
-                helpToolStripMenuItem.Text = "Help";
-                exitToolStripMenuItem.Text = "Exit";
-                this.Vietnames.Checked = false;
-           
+
+            btnConnect2.Text = "Connect";
+            btnShareScreen2.Text = "Share your screen";
+            btnOpenConnect.Text = "Open connect";
+            label1.Text = "OPEN CONNECT";
+            label2.Text = "CONECT TTO OTHER ";
+            label3.Text = "MY IP";
+            label4.Text = "Port";
+            label5.Text = "Waiting other device connect and share screen to your device.";
+            label6.Text = "Partner IP";
+            label7.Text = "Port";
+            label14.Text = "If you can't see full screen please type your screen....";
+            optionToolStripMenuItem.Text = "Option";
+            languagesToolStripMenuItem.Text = "Languages";
+            aboutToolStripMenuItem.Text = "About";
+            helpToolStripMenuItem.Text = "Help";
+            exitToolStripMenuItem.Text = "Exit";
+            this.Vietnames.Checked = false;
+
         }
 
-       
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -241,7 +269,7 @@ namespace UltraView
             MessageBox.Show("Nhóm lập trình trực quan Triple T: Nguyễn Anh Tấn 1752                       Lộc Đức Thắng 17520039                                                                          Nguyễn Văn Tuấn 17521218");
         }
 
-        string logName = "Theodoihoatdong " +"Tháng "+ DateTime.Now.Month.ToString() + ".txt";
+        string logName = "Theodoihoatdong " + "Tháng " + DateTime.Now.Month.ToString() + ".txt";
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -330,10 +358,10 @@ namespace UltraView
         }
         private void StopListenText()//btnShareScreen2_Click
         {
-            if (ListeningToText!=null&&ListeningToText.IsAlive)
+            if (ListeningToText != null && ListeningToText.IsAlive)
                 ListeningToText.Abort();
         }
-        
+
         private void ReceiveText()
         {
             BinaryFormatter binFormatter = new BinaryFormatter();
@@ -342,12 +370,12 @@ namespace UltraView
                 try
                 {
                     instream = client.GetStream();
-                    string str=(String)binFormatter.Deserialize(instream);
+                    string str = (String)binFormatter.Deserialize(instream);
                     string[] strArr = str.Split(':');
 
                     #region Xu ly click
-                    int x = (int)(width * Int32.Parse(strArr[1]) / Int32.Parse(strArr[3]));
-                    int y = (int)(height * Int32.Parse(strArr[2]) / Int32.Parse(strArr[4]));
+                    int x = (int)((width/getScalingFactor()) * Int32.Parse(strArr[1]) / Int32.Parse(strArr[3]));
+                    int y = (int)((height / getScalingFactor()) * Int32.Parse(strArr[2]) / Int32.Parse(strArr[4]));
                     switch (strArr[0])
                     {
                         case "MM"://mouse move
@@ -401,13 +429,18 @@ namespace UltraView
                         default:
                             break;
                     }
-                      
+
                     #endregion
                 }
                 catch { }
             }
         }
+
         #endregion
+
+        
+
+
     }
 }
 

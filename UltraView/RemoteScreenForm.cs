@@ -106,6 +106,7 @@ namespace UltraView
 
 
         #region SendClick
+        
         private NetworkStream ostream;
         private void sendText(string str)
         {
@@ -118,6 +119,8 @@ namespace UltraView
         }
         private void picShowScreen_MouseMove(object sender, MouseEventArgs e)
         {
+            if (!cbxMouse.Checked)
+                return;
             //Lay toa do
             int posX = this.PointToClient(Cursor.Position).X;
             int posY = this.PointToClient(Cursor.Position).Y;
@@ -127,6 +130,8 @@ namespace UltraView
 
         private void picShowScreen_MouseClick(object sender, MouseEventArgs e)
         {
+            if (!cbxMouse.Checked)
+                return;
             //Lay toa do
             int posX = this.PointToClient(Cursor.Position).X;
             int posY = this.PointToClient(Cursor.Position).Y;
@@ -149,6 +154,8 @@ namespace UltraView
         }
         private void picShowScreen_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            if (!cbxMouse.Checked)
+                return;
             int posX = this.PointToClient(Cursor.Position).X;
             int posY = this.PointToClient(Cursor.Position).Y;
             //if (e.Button == MouseButtons.Left)
@@ -166,6 +173,8 @@ namespace UltraView
         //Giu chuot
         private void picShowScreen_MouseDown(object sender, MouseEventArgs e)
         {
+            if (!cbxMouse.Checked)
+                return;
             //Lay toa do
             int posX = this.PointToClient(Cursor.Position).X;
             int posY = this.PointToClient(Cursor.Position).Y;
@@ -179,6 +188,8 @@ namespace UltraView
 
         private void picShowScreen_MouseUp(object sender, MouseEventArgs e)
         {
+            if (!cbxMouse.Checked)
+                return;
             //Lay toa do
             int posX = this.PointToClient(Cursor.Position).X;
             int posY = this.PointToClient(Cursor.Position).Y;
@@ -193,6 +204,9 @@ namespace UltraView
         #endregion
         //lam them giu chuot
         //lam them send key
+
+
+
         #region Status Strip
         //label lay picture box size => set gia tri trong OnLoad va SizeChanged
         private void RemoteScreenForm_SizeChanged(object sender, EventArgs e)
@@ -206,5 +220,6 @@ namespace UltraView
         #endregion
 
         
+
     }
 }

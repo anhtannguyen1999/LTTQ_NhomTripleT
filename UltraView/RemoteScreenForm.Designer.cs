@@ -35,6 +35,8 @@
             this.lbMouseMove = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cbxMouse = new System.Windows.Forms.CheckBox();
+            this.cbxKeyBoard = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picShowScreen)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +46,7 @@
             this.picShowScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picShowScreen.Location = new System.Drawing.Point(0, 0);
             this.picShowScreen.Name = "picShowScreen";
-            this.picShowScreen.Size = new System.Drawing.Size(782, 753);
+            this.picShowScreen.Size = new System.Drawing.Size(782, 728);
             this.picShowScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picShowScreen.TabIndex = 0;
             this.picShowScreen.TabStop = false;
@@ -56,6 +58,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.Transparent;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lbIP,
@@ -100,14 +103,36 @@
             this.lbStatus.Size = new System.Drawing.Size(52, 20);
             this.lbStatus.Text = "Status:";
             // 
+            // cbxMouse
+            // 
+            this.cbxMouse.AutoSize = true;
+            this.cbxMouse.Location = new System.Drawing.Point(233, 0);
+            this.cbxMouse.Name = "cbxMouse";
+            this.cbxMouse.Size = new System.Drawing.Size(156, 21);
+            this.cbxMouse.TabIndex = 6;
+            this.cbxMouse.Text = "Allow mouse remote";
+            this.cbxMouse.UseVisualStyleBackColor = true;
+            // 
+            // cbxKeyBoard
+            // 
+            this.cbxKeyBoard.AutoSize = true;
+            this.cbxKeyBoard.Location = new System.Drawing.Point(395, 0);
+            this.cbxKeyBoard.Name = "cbxKeyBoard";
+            this.cbxKeyBoard.Size = new System.Drawing.Size(173, 21);
+            this.cbxKeyBoard.TabIndex = 7;
+            this.cbxKeyBoard.Text = "Allow keyboard remote";
+            this.cbxKeyBoard.UseVisualStyleBackColor = true;
+            // 
             // RemoteScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(782, 753);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.cbxKeyBoard);
+            this.Controls.Add(this.cbxMouse);
             this.Controls.Add(this.picShowScreen);
+            this.Controls.Add(this.statusStrip1);
             this.Name = "RemoteScreenForm";
             this.Text = "RemoteScreen";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RemoteScreenForm_FormClosed);
@@ -129,6 +154,8 @@
         private System.Windows.Forms.ToolStripStatusLabel lbMouseMove;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lbStatus;
+        private System.Windows.Forms.CheckBox cbxMouse;
+        private System.Windows.Forms.CheckBox cbxKeyBoard;
     }
 }
 
