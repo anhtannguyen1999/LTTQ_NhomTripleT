@@ -69,6 +69,10 @@ namespace UltraView
             try
             {
                 port = int.Parse(txtMyPort.Text);
+
+                //
+                ChatForm chatForm = new ChatForm(0, txtMyIP.Text, port+1);
+                chatForm.Show();
             }
             catch
             {
@@ -78,6 +82,7 @@ namespace UltraView
             new RemoteScreenForm(port).Show();
             Writelogfile("Open connect Port:" + port + " " + DateTime.Now.ToShortTimeString());
             RemoteScreenFormCount++;
+
         }
         #endregion
 
@@ -165,12 +170,15 @@ namespace UltraView
                 client.Connect(txtIP2.Text, portNumber);
                 MessageBox.Show("Connected!");
                 Writelogfile("Ket noi toi thiet bi:\n" + "IP: " + txtMyIP.Text + "\t Port: " + txtMyPort.Text + DateTime.Now.ToShortTimeString());
+                //
+                ChatForm chatForm = new ChatForm(1, txtIP2.Text, portNumber+1);
+                chatForm.Show();
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Failed to connect...");
             }
+
         }
         //Share screen 
         private void btnShareScreen2_Click(object sender, EventArgs e)
@@ -437,10 +445,7 @@ namespace UltraView
         }
 
         #endregion
-
         
-
-
     }
 }
 
