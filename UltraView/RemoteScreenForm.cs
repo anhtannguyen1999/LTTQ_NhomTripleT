@@ -202,11 +202,44 @@ namespace UltraView
         }
 
         #endregion
-        //lam them giu chuot
-        //lam them send key
 
+        #region SendKey
+      
+        private void RemoteScreenForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Nếu không cho điều khiển phím thì return
+            if (cbxKeyBoard.Checked == false)
+                return;
 
+            //Nếu cho phép điều khiển
+            try
+            {
+                string keystr = "KD:" + e.KeyValue.ToString();
+                //richTextBox1.Text += keystr + "\n";
+                sendText(keystr);
+            }
+            catch { }
+            
+        }
 
+        private void RemoteScreenForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            //Nếu không cho điều khiển phím thì return
+            if (cbxKeyBoard.Checked == false)
+                return;
+
+            //Nếu cho phép điều khiển
+            try
+            {
+                string keystr = "KU:" + e.KeyValue.ToString();
+                //richTextBox1.Text += keystr + "\n";
+                sendText(keystr);
+            }
+            catch { }
+            
+        }
+        #endregion
+        
         #region Status Strip
         //label lay picture box size => set gia tri trong OnLoad va SizeChanged
         private void RemoteScreenForm_SizeChanged(object sender, EventArgs e)
@@ -215,11 +248,12 @@ namespace UltraView
             lbSize.Text = "\tSize: " + picShowScreen.Width + "x" + (picShowScreen.Height);
         }
 
+
+
         //label point =>MouseMove
         //label status
         #endregion
 
         
-
     }
 }

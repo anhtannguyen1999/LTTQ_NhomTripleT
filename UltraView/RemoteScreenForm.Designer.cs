@@ -133,10 +133,13 @@
             this.Controls.Add(this.cbxMouse);
             this.Controls.Add(this.picShowScreen);
             this.Controls.Add(this.statusStrip1);
+            this.KeyPreview = true;
             this.Name = "RemoteScreenForm";
             this.Text = "RemoteScreen";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RemoteScreenForm_FormClosed);
             this.SizeChanged += new System.EventHandler(this.RemoteScreenForm_SizeChanged);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RemoteScreenForm_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RemoteScreenForm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.picShowScreen)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
