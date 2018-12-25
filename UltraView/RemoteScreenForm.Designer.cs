@@ -45,8 +45,9 @@
             // 
             this.picShowScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picShowScreen.Location = new System.Drawing.Point(0, 0);
+            this.picShowScreen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picShowScreen.Name = "picShowScreen";
-            this.picShowScreen.Size = new System.Drawing.Size(782, 728);
+            this.picShowScreen.Size = new System.Drawing.Size(778, 514);
             this.picShowScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picShowScreen.TabIndex = 0;
             this.picShowScreen.TabStop = false;
@@ -66,76 +67,82 @@
             this.lbMouseMove,
             this.toolStripStatusLabel1,
             this.lbStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 728);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 514);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(782, 25);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(778, 30);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lbIP
             // 
             this.lbIP.Name = "lbIP";
-            this.lbIP.Size = new System.Drawing.Size(21, 20);
+            this.lbIP.Size = new System.Drawing.Size(27, 25);
             this.lbIP.Text = "IP";
             // 
             // lbSize
             // 
             this.lbSize.Name = "lbSize";
-            this.lbSize.Size = new System.Drawing.Size(36, 20);
+            this.lbSize.Size = new System.Drawing.Size(43, 25);
             this.lbSize.Text = "Size";
             // 
             // lbMouseMove
             // 
             this.lbMouseMove.Name = "lbMouseMove";
             this.lbMouseMove.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbMouseMove.Size = new System.Drawing.Size(42, 20);
+            this.lbMouseMove.Size = new System.Drawing.Size(52, 25);
             this.lbMouseMove.Text = "Point";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(21, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(27, 25);
             this.toolStripStatusLabel1.Text = "   ";
             // 
             // lbStatus
             // 
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(52, 20);
+            this.lbStatus.Size = new System.Drawing.Size(64, 25);
             this.lbStatus.Text = "Status:";
             // 
             // cbxMouse
             // 
+            this.cbxMouse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxMouse.AutoSize = true;
-            this.cbxMouse.Location = new System.Drawing.Point(233, 0);
+            this.cbxMouse.Location = new System.Drawing.Point(458, 520);
+            this.cbxMouse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxMouse.Name = "cbxMouse";
-            this.cbxMouse.Size = new System.Drawing.Size(156, 21);
+            this.cbxMouse.Size = new System.Drawing.Size(137, 24);
             this.cbxMouse.TabIndex = 6;
-            this.cbxMouse.Text = "Allow mouse remote";
+            this.cbxMouse.Text = "Mouse remote";
             this.cbxMouse.UseVisualStyleBackColor = true;
             this.cbxMouse.CheckedChanged += new System.EventHandler(this.cbxMouse_CheckedChanged);
             // 
             // cbxKeyBoard
             // 
+            this.cbxKeyBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxKeyBoard.AutoSize = true;
-            this.cbxKeyBoard.Location = new System.Drawing.Point(395, 0);
+            this.cbxKeyBoard.Location = new System.Drawing.Point(601, 520);
+            this.cbxKeyBoard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxKeyBoard.Name = "cbxKeyBoard";
-            this.cbxKeyBoard.Size = new System.Drawing.Size(173, 21);
+            this.cbxKeyBoard.Size = new System.Drawing.Size(156, 24);
             this.cbxKeyBoard.TabIndex = 7;
-            this.cbxKeyBoard.Text = "Allow keyboard remote";
+            this.cbxKeyBoard.Text = "Keyboard remote";
             this.cbxKeyBoard.UseVisualStyleBackColor = true;
             this.cbxKeyBoard.CheckedChanged += new System.EventHandler(this.cbxKeyBoard_CheckedChanged);
             // 
             // RemoteScreenForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(782, 753);
+            this.ClientSize = new System.Drawing.Size(778, 544);
             this.Controls.Add(this.cbxKeyBoard);
             this.Controls.Add(this.cbxMouse);
             this.Controls.Add(this.picShowScreen);
             this.Controls.Add(this.statusStrip1);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "RemoteScreenForm";
             this.Text = "RemoteScreen";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RemoteScreenForm_FormClosed);

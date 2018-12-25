@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
@@ -170,9 +172,17 @@ namespace UltraView
 
         private bool isConnected = false;
         private void btnConnect2_Click(object sender, EventArgs e)//nhớ Xét các textbox
-        {
+        {      
             Writelogfile("Try Connect " + "IP: " + txtMyIP.Text + ", Port: " + txtMyPort.Text +" "+ DateTime.Now.ToShortTimeString());
-            lbStatus.Text = "Trying connect..";
+            if (intLoaiNN == 2)
+            {
+                lbStatus.Text = "Trying connect..";
+            }
+            else if (intLoaiNN == 1)
+            {
+                lbStatus.Text = "Đang kết nối..";
+            }
+            
             try
             {
                 portNumber = int.Parse(txtPort2.Text);
@@ -181,14 +191,38 @@ namespace UltraView
                 ChatForm chatForm = new ChatForm(1, txtIP2.Text, portNumber+1);
                 chatForm.Show();
                 Writelogfile("Connected " + "IP: " + txtMyIP.Text + ", Port: " + txtMyPort.Text + " " + DateTime.Now.ToShortTimeString());
-                lbStatus.Text = "Connected!";
-                MessageBox.Show("Connected!");
+                if (intLoaiNN == 2)
+                {
+                    lbStatus.Text = "Connected!";
+                }
+                else if (intLoaiNN == 1)
+                {
+                    lbStatus.Text = "Đã kết nối..";
+                }
+                
+                if(intLoaiNN==2)
+                { 
+                    MessageBox.Show("Connected!");
 
+                }
+                else if (intLoaiNN == 1)
+                {
+                    MessageBox.Show("Đã kết nối!");
+
+                }
             }
             catch (Exception)
             {
                 Writelogfile("Faild connect " + "IP: " + txtMyIP.Text + ", Port: " + txtMyPort.Text + " " + DateTime.Now.ToShortTimeString());
-                lbStatus.Text = "Failed to connect...";
+                if (intLoaiNN == 2)
+                {
+                    lbStatus.Text = "Failed to connect...";
+                }
+                else if (intLoaiNN == 1)
+                {
+                    lbStatus.Text = "Kết nối thất bại...";
+                }
+                
                
             }
 
@@ -206,15 +240,31 @@ namespace UltraView
                 }
                 catch
                 {
-                    lbStatus.Text = "You should fill width and height text box or you can empty both.";
+                    if (intLoaiNN == 2)
+                    {
+                        lbStatus.Text = "You should fill width and height text box or you can empty both.";
+                    }
+                    else if (intLoaiNN == 1)
+                    {
+                        lbStatus.Text = "Bạn nên điền vào cả 2 box height and width hoặc để trống cả 2";
+                    }
+                    
                     return;
                 }
             }
-            if (btnShareScreen2.Text.StartsWith("Share"))//Nếu btn...Text có dạng "Share%" thì... 
+            if (btnShareScreen2.Text.StartsWith("Share")||btnShareScreen2.Text.StartsWith("Chia"))//Nếu btn...Text có dạng "Share%" thì... 
             {
                 timer1.Start();
                 btnShareScreen2.Text = "Stop sharing";
-                lbStatus.Text = "Sharing screen...";
+                if (intLoaiNN == 2)
+                {
+                    lbStatus.Text = "Sharing screen...";
+                }
+                else if (intLoaiNN == 1)
+                {
+                    lbStatus.Text = "Đang truyền màn hình...";
+                }
+                
                 StartListenText();//Listen texxt
                 Writelogfile("ShareScreen: " + "IP: " + txtMyIP.Text + ", Port: " + txtMyPort.Text + " " + DateTime.Now.ToShortTimeString());
                 
@@ -223,7 +273,15 @@ namespace UltraView
             {
                 timer1.Stop();
                 btnShareScreen2.Text = "Share my screen..";
-                lbStatus.Text = "Stopped share screen";
+                if (intLoaiNN == 2)
+                {
+                    lbStatus.Text = "Stopped share screen";
+                }
+                else if (intLoaiNN == 1)
+                {
+                    lbStatus.Text = "Dừng truyền màn hình...";
+                }
+                
                 Writelogfile("StopShareScreen: " + "IP: " + txtMyIP.Text + ", Port: " + txtMyPort.Text + " " + DateTime.Now.ToShortTimeString());
 
                 //StopListenText();//Stop listen
@@ -238,57 +296,21 @@ namespace UltraView
         #endregion
 
         #region Tuan_Menu_and_Ghilog
-        private void Vietnames_CheckedChanged(object sender, EventArgs e)
-        {
+    
 
-            btnConnect2.Text = "Kết nối";
-            btnShareScreen2.Text = "Chia sẻ màn hình";
-            btnOpenConnect.Text = "Mở kết nối";
-            label1.Text = "Mở kết nối";
-            label2.Text = "Kết nối tới thiết bị khác";
-            label3.Text = "IP của tôi";
-            label4.Text = "Cổng";
-            label5.Text = "Chờ kết nối và chia sẻ màn hình";
-            label6.Text = "IP đối tác";
-            label7.Text = "Cổng";
-            label14.Text = "Nếu không thể xem đầy màn hình vui lòng nhập kích thước";
-            optionToolStripMenuItem.Text = "Tùy chọn";
-            languagesToolStripMenuItem.Text = "Ngôn ngữ";
-            aboutToolStripMenuItem.Text = "Thông tin";
-            helpToolStripMenuItem.Text = "Trợ giúp";
-            exitToolStripMenuItem.Text = "Thoát";
-
-            this.English.Checked = false;
-
-        }
-
-        private void English_CheckedChanged(object sender, EventArgs e)
-        {
-            
-            btnConnect2.Text = "Connect";
-            btnShareScreen2.Text = "Share your screen";
-            btnOpenConnect.Text = "Open connect";
-            label1.Text = "OPEN CONNECT";
-            label2.Text = "CONECT TTO OTHER ";
-            label3.Text = "MY IP";
-            label4.Text = "Port";
-            label5.Text = "Waiting other device connect and share screen to your device.";
-            label6.Text = "Partner IP";
-            label7.Text = "Port";
-            label14.Text = "If you can't see full screen please type your screen....";
-            optionToolStripMenuItem.Text = "Option";
-            languagesToolStripMenuItem.Text = "Languages";
-            aboutToolStripMenuItem.Text = "About";
-            helpToolStripMenuItem.Text = "Help";
-            exitToolStripMenuItem.Text = "Exit";
-            this.Vietnames.Checked = false;
-
-        }
+     
         
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Writelogfile("btnExitClick" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
-            lbStatus.Text = "Exit..";
+            if (intLoaiNN == 2)
+            {
+                lbStatus.Text = "Exit..";
+            }
+            else if (intLoaiNN == 1)
+            {
+                lbStatus.Text = "Thoát...";
+            }
             Application.Exit();
         }
 
@@ -301,14 +323,41 @@ namespace UltraView
 
         //string logName = @"Log " + "Month " + DateTime.Now.Month.ToString() + ".txt";
         string logName = @"log.txt";
+        int intLoaiNN = 0;//1 là Việt Nam 2 là English
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //Đọc file loại ngôn ngữ
+            try
+            {
+                StreamReader reader = new StreamReader("NumberLang.txt");
+                string loaiNN = reader.ReadToEnd();
+                reader.Close();
+                if (loaiNN == "1")
+                {
+                    intLoaiNN = 1;
+                    Vietnames_Click(Vietnames, null);
+                }
+                    
+                if (loaiNN == "2")
+                {
+                    intLoaiNN = 2;
+                    English_Click(English, null);
+                }
+                    
+                
+            }
+            catch
+            {
+                MessageBox.Show("ERR: Language file has been lost");
+            }
+            //Ghi log
             if (!File.Exists(logName))
             {
                 File.Create(logName).Close();
             }
             Writelogfile(" ");
             Writelogfile("*LOAD*"+DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
+
 
         }
         private void Writelogfile(string txt)
@@ -321,50 +370,56 @@ namespace UltraView
                 }
             }
         }
+        #endregion
+        #region MultiLanguage
         private void Vietnames_Click(object sender, EventArgs e)
         {
-            Writelogfile("ChangeLanguageToVietNamese " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
-            lbStatus.Text = "Change Language To VietNamese";
-            btnConnect2.Text = "Kết nối";
-            btnShareScreen2.Text = "Chia sẻ màn hình";
-            btnOpenConnect.Text = "Mở kết nối";
-            label1.Text = "Mở kết nối";
-            label2.Text = "Kết nối tới thiết bị khác";
-            label3.Text = "IP của tôi";
-            label4.Text = "Cổng";
-            label5.Text = "Chờ kết nối và chia sẻ màn hình";
-            label6.Text = "IP đối tác";
-            label7.Text = "Cổng";
-            label14.Text = "Nếu không thể xem đầy màn hình vui lòng nhập kích thước";
-            optionToolStripMenuItem.Text = "Tùy chọn";
-            languagesToolStripMenuItem.Text = "Ngôn ngữ";
-            aboutToolStripMenuItem.Text = "Thông tin";
-            helpToolStripMenuItem.Text = "Trợ giúp";
-            exitToolStripMenuItem.Text = "Thoát";
+            SetLanguage("vi-VN");
+            StaticLanguage(1);
         }
 
         private void English_Click(object sender, EventArgs e)
         {
-            Writelogfile("ChangeLanguageToEnglish " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
-            lbStatus.Text = "Change Language To English";
-            btnConnect2.Text = "Connect";
-            btnShareScreen2.Text = "Share your screen";
-            btnOpenConnect.Text = "Open connect";
-            label1.Text = "OPEN CONNECT";
-            label2.Text = "CONECT TO OTHER ";
-            label3.Text = "MY IP";
-            label4.Text = "Port";
-            label5.Text = "Waiting other device connect and share screen to your device.";
-            label6.Text = "Partner IP";
-            label7.Text = "Port";
-            label14.Text = "If you can't see full screen please type your screen....";
-            optionToolStripMenuItem.Text = "Option";
-            languagesToolStripMenuItem.Text = "Languages";
-            aboutToolStripMenuItem.Text = "About";
-            helpToolStripMenuItem.Text = "Help";
-            exitToolStripMenuItem.Text = "Exit";
+            SetLanguage("en-US");
+            StaticLanguage(2);
+        }
+
+        private void SetLanguage(string cultureName)
+        {
+            CultureInfo culture = CultureInfo.CreateSpecificCulture(cultureName);
+            ResourceManager rm = new
+                ResourceManager("UltraView.Lang.MyResource", typeof(MainForm).Assembly);
+            btnConnect2.Text = rm.GetString("connect", culture);
+            btnOpenConnect.Text = rm.GetString("openconnect", culture);
+            btnShareScreen2.Text = rm.GetString("sharescreen", culture);
+            label2.Text = rm.GetString("cntoother", culture);
+            label1.Text = rm.GetString("openconnect", culture);
+            label5.Text = rm.GetString("waiting", culture);
+            label14.Text = rm.GetString("fullscreen", culture);
+            label3.Text = rm.GetString("myip", culture);
+            label4.Text = rm.GetString("myport", culture);
+            label6.Text = rm.GetString("partnerip", culture);
+            label7.Text = rm.GetString("myport", culture);
+            languagesToolStripMenuItem.Text = rm.GetString("language", culture);
+            Vietnames.Text = rm.GetString("vietnamese", culture);
+            English.Text = rm.GetString("english", culture);
+            optionToolStripMenuItem.Text = rm.GetString("option", culture);
+            helpToolStripMenuItem.Text = rm.GetString("help",culture);
+            aboutToolStripMenuItem.Text = rm.GetString("about", culture);
+            exitToolStripMenuItem.Text = rm.GetString("exit", culture);
+
+
+        }
+        private void StaticLanguage(int LanguageNumber)
+        {
+            FileStream fs = new FileStream("NumberLang.txt", FileMode.Create, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.Write(LanguageNumber);
+            sw.Close();
+            fs.Close();
         }
         #endregion
+
 
         #region ReceiveClick and Keys
         private Thread ListeningToText;

@@ -156,3 +156,26 @@ E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\GiaiDoann9\LTTQ_NhomTripleT\Ult
 E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\GiaiDoann9\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.RemoteScreenForm.resources
 E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\GiaiDoann9\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.Properties.Resources.resources
 E:\HocTap\HK3\LapTrinhTrucQuan\DoAn\NFileLamDoAn\GiaiDoann9\LTTQ_NhomTripleT\UltraView\obj\Debug\UltraView.csproj.GenerateResource.Cache
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\bin\Debug\UltraView.exe.config
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\bin\Debug\UltraView.exe
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\bin\Debug\UltraView.pdb
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\bin\Debug\en-US\UltraView.resources.dll
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\bin\Debug\vi-VN\UltraView.resources.dll
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\bin\Debug\KAutoHelper.dll
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\bin\Debug\Newtonsoft.Json.dll
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\bin\Debug\Newtonsoft.Json.xml
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.csprojAssemblyReference.cache
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.ChatForm.resources
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.Lang.MyResource.resources
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.MainForm.resources
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.RemoteScreenForm.resources
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.Properties.Resources.resources
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.Lang.MyResource.en-US.resources
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.Lang.MyResource.vi-VN.resources
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.csproj.GenerateResource.cache
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.csproj.CoreCompileInputs.cache
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\en-US\UltraView.resources.dll
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\vi-VN\UltraView.resources.dll
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.csproj.CopyComplete
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.exe
+D:\Năm 2\LTTQ_NhomTripleT-master\UltraView\obj\Debug\UltraView.pdb

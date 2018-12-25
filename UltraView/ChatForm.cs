@@ -112,7 +112,10 @@ namespace UltraView
                     string result = str.Substring(0, 3);
                     if(result=="MS:")
                     {
-                        tbxShowMessage.Text += "\nĐối tác: " + str.Substring(3);
+                       
+                        tbxShowMessage.SelectedText += "\nĐối tác: " + str.Substring(3);
+                        tbxShowMessage.SelectionColor = Color.Black ;
+
                     }
                 }
                 catch { }
@@ -128,7 +131,7 @@ namespace UltraView
         
         //Gửi tin nhắn
         private NetworkStream stream;
-
+        
         private void btnSend_Click_1(object sender, EventArgs e)
         {
             if (tbxMessage.Text != "")
@@ -142,8 +145,11 @@ namespace UltraView
                     tbxShowMessage.Text += "\nTin nhắn không gửi được!";
                     return;
                 }
-                tbxShowMessage.Text += "\nTôi: " + tbxMessage.Text;
-                tbxMessage.Text = "";
+             
+                tbxShowMessage.SelectedText += "\nTôi: " + tbxMessage.Text;
+                
+                tbxMessage.Clear();
+                tbxMessage.Focus();
             }
 
         }
@@ -172,6 +178,13 @@ namespace UltraView
             }
         }
 
+        private void ChatForm_Load(object sender, EventArgs e)
+        {
+            tbxMessage.Focus();
+            tbxShowMessage.SelectionColor = Color.Blue;
+            
+
+        }
     }
 }
 

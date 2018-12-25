@@ -33,7 +33,7 @@ namespace UltraView
             client = new TcpClient();
             Listening = new Thread(StartListening);
             GetImage = new Thread(ReceiveImage);
-            MessageBox.Show("Open connection success!");
+            //MessageBox.Show("Open connection success!");
             InitializeComponent();
             this.ActiveControl = picShowScreen;
             Writelogfile("OpenFormRemote " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
