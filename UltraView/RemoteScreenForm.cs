@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -34,6 +35,8 @@ namespace UltraView
             GetImage = new Thread(ReceiveImage);
             MessageBox.Show("Open connection success!");
             InitializeComponent();
+            this.ActiveControl = picShowScreen;
+            Writelogfile("OpenFormRemote " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
         }
         private void StartListening()
         {
@@ -60,6 +63,7 @@ namespace UltraView
             if (GetImage.IsAlive) GetImage.Abort();
             MessageBox.Show("Disconnect success!");
         }
+        
         private void ReceiveImage()
         {
             BinaryFormatter binFormatter = new BinaryFormatter();
@@ -97,6 +101,7 @@ namespace UltraView
         {
             base.OnFormClosing(e);
             StopListening();
+            Writelogfile("FormRemoteClose " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
         }
         private void RemoteScreenForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -250,10 +255,39 @@ namespace UltraView
 
 
 
+
         //label point =>MouseMove
         //label status
         #endregion
 
-        
+        private void cbxMouse_CheckedChanged(object sender, EventArgs e)
+        {
+            this.ActiveControl = picShowScreen;
+            if(cbxMouse.Checked)
+                Writelogfile("cbxMouse_Check" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
+            else
+                Writelogfile("cbxMouse_UnCheck" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
+        }
+
+        private void cbxKeyBoard_CheckedChanged(object sender, EventArgs e)
+        {
+            this.ActiveControl = picShowScreen;
+            if (cbxMouse.Checked)
+                Writelogfile("cbxKeyBoard_Check" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
+            else
+                Writelogfile("cbxKeyBoard_UnCheck" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
+        }
+
+        //WriteLog
+        private void Writelogfile(string txt)
+        {
+            using (FileStream fs = new FileStream(@"log.txt", FileMode.Append))
+            {
+                using (StreamWriter writer = new StreamWriter(fs, Encoding.UTF8))
+                {
+                    writer.WriteLine(txt);
+                }
+            }
+        }
     }
 }

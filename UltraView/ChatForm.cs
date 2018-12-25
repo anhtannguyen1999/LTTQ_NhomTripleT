@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Net;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace UltraView
 {
@@ -30,6 +31,7 @@ namespace UltraView
         private string ip;
         public ChatForm(byte Loai, string IP, int Port) //loai form= 0 server, 1 client
         {
+
             loai = Loai;
             port = Port;
             ip = IP;
@@ -45,6 +47,7 @@ namespace UltraView
                 GetText = new Thread(ReceiveText);
             }
             InitializeComponent();
+            Writelogfile("OpenChatForm" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
         }
         protected override void OnLoad(EventArgs e)
         {
@@ -120,6 +123,7 @@ namespace UltraView
         {
             base.OnFormClosing(e);
             StopListening();
+            Writelogfile("FormChatClose" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
         }
         
         //Gửi tin nhắn
@@ -155,6 +159,19 @@ namespace UltraView
             }
 
         }
+
+        //WriteLog
+        private void Writelogfile(string txt)
+        {
+            using (FileStream fs = new FileStream(@"log.txt", FileMode.Append))
+            {
+                using (StreamWriter writer = new StreamWriter(fs, Encoding.UTF8))
+                {
+                    writer.WriteLine(txt);
+                }
+            }
+        }
+
     }
 }
 

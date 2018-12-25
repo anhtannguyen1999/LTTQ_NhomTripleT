@@ -240,7 +240,7 @@
             this.btnShareScreen2.Name = "btnShareScreen2";
             this.btnShareScreen2.Size = new System.Drawing.Size(200, 30);
             this.btnShareScreen2.TabIndex = 11;
-            this.btnShareScreen2.Text = "SHARE YOUR SCREEN";
+            this.btnShareScreen2.Text = "Share your screen";
             this.btnShareScreen2.UseVisualStyleBackColor = false;
             this.btnShareScreen2.Click += new System.EventHandler(this.btnShareScreen2_Click);
             // 
@@ -373,6 +373,7 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -400,6 +401,7 @@
             this.btnUpdate.Size = new System.Drawing.Size(52, 35);
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // statusStrip1
             // 
@@ -414,6 +416,8 @@
             // 
             // lbStatus
             // 
+            this.lbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lbStatus.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(49, 20);
             this.lbStatus.Text = "Status";

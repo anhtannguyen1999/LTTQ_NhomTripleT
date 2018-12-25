@@ -112,6 +112,7 @@
             this.cbxMouse.TabIndex = 6;
             this.cbxMouse.Text = "Allow mouse remote";
             this.cbxMouse.UseVisualStyleBackColor = true;
+            this.cbxMouse.CheckedChanged += new System.EventHandler(this.cbxMouse_CheckedChanged);
             // 
             // cbxKeyBoard
             // 
@@ -122,6 +123,7 @@
             this.cbxKeyBoard.TabIndex = 7;
             this.cbxKeyBoard.Text = "Allow keyboard remote";
             this.cbxKeyBoard.UseVisualStyleBackColor = true;
+            this.cbxKeyBoard.CheckedChanged += new System.EventHandler(this.cbxKeyBoard_CheckedChanged);
             // 
             // RemoteScreenForm
             // 
