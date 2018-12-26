@@ -85,17 +85,27 @@ namespace UltraView
             }
             catch
             {
-                MessageBox.Show("Listening failed!");
+                // MessageBox.Show("Listening failed!");
+                StopListening();
             }
 
         }
-        private void StopListening()
+        public void StopListening()
         {
-            server.Stop();
-            client = null;
-            if (Listening.IsAlive) Listening.Abort();
-            if (GetText.IsAlive) GetText.Abort();
-            MessageBox.Show("Disconnect success!");
+            try
+            {
+                client.Close();
+                client = null;
+                server.Stop();
+            }
+            catch { }
+            try
+            {
+                if (GetText.IsAlive) GetText.Abort();
+                if (Listening.IsAlive) Listening.Abort();
+            }
+            catch { }
+            // MessageBox.Show("Disconnect success!");
         }
 
         //Nhận tin nhắn
@@ -103,23 +113,24 @@ namespace UltraView
         private void ReceiveText()
         {
             BinaryFormatter binFormatter = new BinaryFormatter();
-            while (client.Connected)
+            try
             {
-                try
+                while (client.Connected)
                 {
-                    istream = client.GetStream();
-                    string str = (String)binFormatter.Deserialize(istream);
-                    string result = str.Substring(0, 3);
-                    if(result=="MS:")
+                    try
                     {
-                       
-                        tbxShowMessage.SelectedText += "\nĐối tác: " + str.Substring(3);
-                        tbxShowMessage.SelectionColor = Color.Black ;
-
+                        istream = client.GetStream();
+                        string str = (String)binFormatter.Deserialize(istream);
+                        string result = str.Substring(0, 3);
+                        if (result == "MS:")
+                        {
+                            tbxShowMessage.Text += "\nThey: " + str.Substring(3);
+                        }
                     }
+                    catch { }
                 }
-                catch { }
             }
+            catch { }
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -146,7 +157,7 @@ namespace UltraView
                     return;
                 }
              
-                tbxShowMessage.SelectedText += "\nTôi: " + tbxMessage.Text;
+                tbxShowMessage.Text += "\nWe: " + tbxMessage.Text;
                 
                 tbxMessage.Clear();
                 tbxMessage.Focus();

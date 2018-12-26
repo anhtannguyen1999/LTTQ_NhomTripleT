@@ -198,3 +198,346 @@ Connected IP: 10.10.113.0, Port: 1999 3:21 PM
 ShareScreen: IP: 10.10.113.0, Port: 1999 3:21 PM
 StopShareScreen: IP: 10.10.113.0, Port: 1999 3:21 PM
 ShareScreen: IP: 10.10.113.0, Port: 1999 3:21 PM
+ 
+*LOAD*Tuesday, December 25, 2018 8:45:36 PM
+btnHelpClickTuesday, December 25, 2018 8:46:15 PM
+btnAboutClickTuesday, December 25, 2018 8:46:17 PM
+btnExitClickTuesday, December 25, 2018 8:46:22 PM
+BtnFormClose Tuesday, December 25, 2018 8:46:22 PM
+ 
+*LOAD*Tuesday, December 25, 2018 8:49:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 8:49 PM
+Faild connect IP: 192.168.2.107, Port: 1999 8:49 PM
+ 
+*LOAD*Tuesday, December 25, 2018 9:02:54 PM
+OpenChatFormTuesday, December 25, 2018 9:02:55 PM
+Open connect Port: 1999 9:02 PM
+OpenFormRemote Tuesday, December 25, 2018 9:02:55 PM
+BtnFormClose Tuesday, December 25, 2018 9:03:04 PM
+FormRemoteClose Tuesday, December 25, 2018 9:03:05 PM
+FormChatCloseTuesday, December 25, 2018 9:03:05 PM
+ 
+*LOAD*Tuesday, December 25, 2018 9:04:27 PM
+OpenChatFormTuesday, December 25, 2018 9:04:28 PM
+Open connect Port: 1999 9:04 PM
+OpenFormRemote Tuesday, December 25, 2018 9:04:28 PM
+BtnFormClose Tuesday, December 25, 2018 9:04:30 PM
+FormRemoteClose Tuesday, December 25, 2018 9:04:32 PM
+FormChatCloseTuesday, December 25, 2018 9:04:33 PM
+ 
+*LOAD*Tuesday, December 25, 2018 9:04:54 PM
+OpenChatFormTuesday, December 25, 2018 9:04:55 PM
+Open connect Port: 1999 9:04 PM
+OpenFormRemote Tuesday, December 25, 2018 9:04:55 PM
+BtnFormClose Tuesday, December 25, 2018 9:04:57 PM
+FormRemoteClose Tuesday, December 25, 2018 9:04:58 PM
+FormChatCloseTuesday, December 25, 2018 9:04:58 PM
+ 
+*LOAD*Tuesday, December 25, 2018 9:05:01 PM
+OpenChatFormTuesday, December 25, 2018 9:05:02 PM
+Open connect Port: 1999 9:05 PM
+OpenFormRemote Tuesday, December 25, 2018 9:05:02 PM
+FormRemoteClose Tuesday, December 25, 2018 9:05:04 PM
+BtnFormClose Tuesday, December 25, 2018 9:05:05 PM
+FormChatCloseTuesday, December 25, 2018 9:05:05 PM
+ 
+*LOAD*Tuesday, December 25, 2018 9:05:08 PM
+OpenChatFormTuesday, December 25, 2018 9:05:09 PM
+Open connect Port: 1999 9:05 PM
+OpenFormRemote Tuesday, December 25, 2018 9:05:09 PM
+Try Connect IP: 192.168.2.107, Port: 1999 9:05 PM
+OpenChatFormTuesday, December 25, 2018 9:05:17 PM
+Connected IP: 192.168.2.107, Port: 1999 9:05 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 9:05 PM
+BtnFormClose Tuesday, December 25, 2018 9:05:25 PM
+FormRemoteClose Tuesday, December 25, 2018 9:05:26 PM
+FormChatCloseTuesday, December 25, 2018 9:05:26 PM
+ 
+*LOAD*Tuesday, December 25, 2018 11:08:31 PM
+ 
+*LOAD*Tuesday, December 25, 2018 11:12:23 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:12 PM
+OpenChatFormTuesday, December 25, 2018 11:12:44 PM
+Connected IP: 192.168.2.107, Port: 1999 11:12 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:12 PM
+ 
+*LOAD*Tuesday, December 25, 2018 11:17:08 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:17 PM
+OpenChatFormTuesday, December 25, 2018 11:17:28 PM
+Connected IP: 192.168.2.107, Port: 1999 11:17 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:17 PM
+ 
+*LOAD*Tuesday, December 25, 2018 11:20:22 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:20 PM
+OpenChatFormTuesday, December 25, 2018 11:20:39 PM
+Connected IP: 192.168.2.107, Port: 1999 11:20 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:20 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:20 PM
+ 
+*LOAD*Tuesday, December 25, 2018 11:26:19 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:26 PM
+OpenChatFormTuesday, December 25, 2018 11:26:37 PM
+Connected IP: 192.168.2.107, Port: 1999 11:26 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:26 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:26 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:26 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:26 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:26 PM
+ 
+*LOAD*Tuesday, December 25, 2018 11:30:18 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:30 PM
+OpenChatFormTuesday, December 25, 2018 11:30:42 PM
+Connected IP: 192.168.2.107, Port: 1999 11:30 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:30 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:31 PM
+BtnFormClose Tuesday, December 25, 2018 11:31:03 PM
+ 
+*LOAD*Tuesday, December 25, 2018 11:32:27 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:32 PM
+OpenChatFormTuesday, December 25, 2018 11:32:41 PM
+Connected IP: 192.168.2.107, Port: 1999 11:32 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:32 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:33 PM
+Faild connect IP: 192.168.2.107, Port: 1999 11:33 PM
+ 
+*LOAD*Tuesday, December 25, 2018 11:36:42 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:37 PM
+OpenChatFormTuesday, December 25, 2018 11:37:13 PM
+Connected IP: 192.168.2.107, Port: 1999 11:37 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:37 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:37 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:37 PM
+OpenChatFormTuesday, December 25, 2018 11:37:55 PM
+Connected IP: 192.168.2.107, Port: 1999 11:37 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:37 PM
+ 
+*LOAD*Tuesday, December 25, 2018 11:40:07 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:40 PM
+OpenChatFormTuesday, December 25, 2018 11:40:26 PM
+Connected IP: 192.168.2.107, Port: 1999 11:40 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:40 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:40 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:41 PM
+OpenChatFormTuesday, December 25, 2018 11:41:03 PM
+Connected IP: 192.168.2.107, Port: 1999 11:41 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:41 PM
+ 
+*LOAD*Tuesday, December 25, 2018 11:56:21 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:56 PM
+OpenChatFormTuesday, December 25, 2018 11:56:30 PM
+Connected IP: 192.168.2.107, Port: 1999 11:56 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:56 PM
+FormChatCloseTuesday, December 25, 2018 11:56:47 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:56 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:56 PM
+OpenChatFormTuesday, December 25, 2018 11:56:59 PM
+Connected IP: 192.168.2.107, Port: 1999 11:56 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:57 PM
+FormChatCloseTuesday, December 25, 2018 11:57:31 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:57 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:57 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:57 PM
+Try Connect IP: 192.168.2.107, Port: 1999 11:57 PM
+OpenChatFormTuesday, December 25, 2018 11:57:36 PM
+Connected IP: 192.168.2.107, Port: 1999 11:57 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:57 PM
+FormChatCloseTuesday, December 25, 2018 11:58:07 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ShareScreen: IP: 192.168.2.107, Port: 1999 11:58 PM
+ 
+*LOAD*Wednesday, December 26, 2018 12:01:37 AM
+BtnFormClose Wednesday, December 26, 2018 12:01:49 AM
+ 
+*LOAD*Wednesday, December 26, 2018 12:01:52 AM
+Try Connect IP: 192.168.2.107, Port: 1999 12:02 AM
+OpenChatFormWednesday, December 26, 2018 12:02:04 AM
+Connected IP: 192.168.2.107, Port: 1999 12:02 AM
+ShareScreen: IP: 192.168.2.107, Port: 1999 12:02 AM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 12:02 AM
+Try Connect IP: 192.168.2.107, Port: 1999 12:02 AM
+OpenChatFormWednesday, December 26, 2018 12:02:12 AM
+Connected IP: 192.168.2.107, Port: 1999 12:02 AM
+ShareScreen: IP: 192.168.2.107, Port: 1999 12:02 AM
+ 
+*LOAD*Wednesday, December 26, 2018 12:03:06 AM
+Try Connect IP: 192.168.2.107, Port: 1999 12:03 AM
+OpenChatFormWednesday, December 26, 2018 12:03:18 AM
+Connected IP: 192.168.2.107, Port: 1999 12:03 AM
+ShareScreen: IP: 192.168.2.107, Port: 1999 12:03 AM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 12:03 AM
+ShareScreen: IP: 192.168.2.107, Port: 1999 12:03 AM
+FormChatCloseWednesday, December 26, 2018 12:03:44 AM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 12:03 AM
+Try Connect IP: 192.168.2.107, Port: 1999 12:03 AM
+OpenChatFormWednesday, December 26, 2018 12:03:51 AM
+Connected IP: 192.168.2.107, Port: 1999 12:03 AM
+ShareScreen: IP: 192.168.2.107, Port: 1999 12:03 AM
+ 
+*LOAD*Wednesday, December 26, 2018 12:05:17 AM
+Try Connect IP: 192.168.2.107, Port: 1999 12:05 AM
+OpenChatFormWednesday, December 26, 2018 12:05:29 AM
+Connected IP: 192.168.2.107, Port: 1999 12:05 AM
+ShareScreen: IP: 192.168.2.107, Port: 1999 12:05 AM
+FormChatCloseWednesday, December 26, 2018 12:05:49 AM
+StopShareScreen: IP: 192.168.2.107, Port: 1999 12:05 AM
+Try Connect IP: 192.168.2.107, Port: 1999 12:06 AM
+OpenChatFormWednesday, December 26, 2018 12:06:11 AM
+Connected IP: 192.168.2.107, Port: 1999 12:06 AM
+ShareScreen: IP: 192.168.2.107, Port: 1999 12:06 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:03:14 AM
+Try Connect IP: 192.168.2.107, Port: 1999 10:03 AM
+OpenChatFormWednesday, December 26, 2018 10:03:31 AM
+Connected IP: 192.168.2.107, Port: 1999 10:03 AM
+ShareScreen: IP: 192.168.2.107, Port: 1999 10:03 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:04:58 AM
+Try Connect IP: 192.168.2.107, Port: 1999 10:05 AM
+OpenChatFormWednesday, December 26, 2018 10:05:08 AM
+Connected IP: 192.168.2.107, Port: 1999 10:05 AM
+ShareScreen: IP: 192.168.2.107, Port: 1999 10:05 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:08:11 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:10:12 AM
+OpenChatFormWednesday, December 26, 2018 10:10:12 AM
+Open connect Port: 1999 10:10 AM
+OpenFormRemote Wednesday, December 26, 2018 10:10:12 AM
+BtnFormClose Wednesday, December 26, 2018 10:10:20 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:10:34 AM
+OpenChatFormWednesday, December 26, 2018 10:10:35 AM
+Open connect Port: 1999 10:10 AM
+OpenFormRemote Wednesday, December 26, 2018 10:10:35 AM
+BtnFormClose Wednesday, December 26, 2018 10:10:38 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:12:14 AM
+OpenChatFormWednesday, December 26, 2018 10:12:15 AM
+Open connect Port: 1999 10:12 AM
+OpenFormRemote Wednesday, December 26, 2018 10:12:15 AM
+BtnFormClose Wednesday, December 26, 2018 10:12:18 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:13:27 AM
+OpenChatFormWednesday, December 26, 2018 10:13:27 AM
+Open connect Port: 1999 10:13 AM
+OpenFormRemote Wednesday, December 26, 2018 10:13:27 AM
+BtnFormClose Wednesday, December 26, 2018 10:13:29 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:13:41 AM
+OpenChatFormWednesday, December 26, 2018 10:13:42 AM
+Open connect Port: 1999 10:13 AM
+OpenFormRemote Wednesday, December 26, 2018 10:13:42 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:13:48 AM
+OpenChatFormWednesday, December 26, 2018 10:13:49 AM
+Open connect Port: 1999 10:13 AM
+OpenFormRemote Wednesday, December 26, 2018 10:13:49 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:15:03 AM
+OpenChatFormWednesday, December 26, 2018 10:15:05 AM
+Open connect Port: 1999 10:15 AM
+OpenFormRemote Wednesday, December 26, 2018 10:15:05 AM
+FormRemoteClose Wednesday, December 26, 2018 10:15:16 AM
+FormChatCloseWednesday, December 26, 2018 10:15:19 AM
+BtnFormClose Wednesday, December 26, 2018 10:15:23 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:15:40 AM
+OpenChatFormWednesday, December 26, 2018 10:15:41 AM
+Open connect Port: 1999 10:15 AM
+OpenFormRemote Wednesday, December 26, 2018 10:15:41 AM
+FormRemoteClose Wednesday, December 26, 2018 10:15:52 AM
+FormChatCloseWednesday, December 26, 2018 10:15:52 AM
+BtnFormClose Wednesday, December 26, 2018 10:15:52 AM
+ 
+*LOAD*Wednesday, December 26, 2018 10:16:00 AM
+OpenChatFormWednesday, December 26, 2018 10:16:01 AM
+Open connect Port: 1999 10:16 AM
+OpenFormRemote Wednesday, December 26, 2018 10:16:01 AM
+FormRemoteClose Wednesday, December 26, 2018 10:16:03 AM
+FormChatCloseWednesday, December 26, 2018 10:16:03 AM
+BtnFormClose Wednesday, December 26, 2018 10:16:03 AM
+ 
+*LOAD*Wednesday, December 26, 2018 2:44:47 PM
+OpenChatFormWednesday, December 26, 2018 2:45:10 PM
+Open connect Port: 1999 2:45 PM
+OpenFormRemote Wednesday, December 26, 2018 2:45:10 PM
+FormRemoteClose Wednesday, December 26, 2018 2:46:02 PM
+FormChatCloseWednesday, December 26, 2018 2:46:03 PM
+OpenChatFormWednesday, December 26, 2018 2:46:04 PM
+Open connect Port: 1999 2:46 PM
+OpenFormRemote Wednesday, December 26, 2018 2:46:05 PM
+ 
+*LOAD*Wednesday, December 26, 2018 2:57:00 PM
+OpenChatFormWednesday, December 26, 2018 2:57:02 PM
+Open connect Port: 1999 2:57 PM
+OpenFormRemote Wednesday, December 26, 2018 2:57:02 PM
+ 
+*LOAD*Wednesday, December 26, 2018 3:07:27 PM
+Try Connect IP: 10.10.123.25, Port: 1999 3:07 PM
+OpenChatFormWednesday, December 26, 2018 3:07:47 PM
+Connected IP: 10.10.123.25, Port: 1999 3:07 PM
+ShareScreen: IP: 10.10.123.25, Port: 1999 3:08 PM
+FormChatCloseWednesday, December 26, 2018 3:08:17 PM
+StopShareScreen: IP: 10.10.123.25, Port: 1999 3:08 PM
+ 
+*LOAD*Wednesday, December 26, 2018 3:26:37 PM
+ 
+*LOAD*Wednesday, December 26, 2018 3:26:54 PM
+ 
+*LOAD*Wednesday, December 26, 2018 3:27:24 PM
+btnUpdateClickWednesday, December 26, 2018 3:27:30 PM
+btnAboutClickWednesday, December 26, 2018 3:27:34 PM
+btnAboutClickWednesday, December 26, 2018 3:27:40 PM
+ 
+*LOAD*Wednesday, December 26, 2018 3:31:58 PM
+btnAboutClickWednesday, December 26, 2018 3:32:00 PM
+BtnFormClose Wednesday, December 26, 2018 3:32:11 PM
+ 
+*LOAD*Wednesday, December 26, 2018 3:32:34 PM
+btnAboutClickWednesday, December 26, 2018 3:32:36 PM
+BtnFormClose Wednesday, December 26, 2018 3:32:49 PM

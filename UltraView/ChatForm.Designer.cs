@@ -35,44 +35,45 @@
             // 
             // tbxShowMessage
             // 
+            this.tbxShowMessage.BackColor = System.Drawing.Color.AliceBlue;
             this.tbxShowMessage.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tbxShowMessage.Location = new System.Drawing.Point(14, 15);
-            this.tbxShowMessage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbxShowMessage.Location = new System.Drawing.Point(12, 12);
             this.tbxShowMessage.Name = "tbxShowMessage";
             this.tbxShowMessage.ReadOnly = true;
-            this.tbxShowMessage.Size = new System.Drawing.Size(345, 434);
+            this.tbxShowMessage.Size = new System.Drawing.Size(307, 348);
             this.tbxShowMessage.TabIndex = 0;
             this.tbxShowMessage.Text = "";
             // 
             // tbxMessage
             // 
-            this.tbxMessage.Location = new System.Drawing.Point(14, 458);
-            this.tbxMessage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbxMessage.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbxMessage.Location = new System.Drawing.Point(12, 366);
             this.tbxMessage.Name = "tbxMessage";
-            this.tbxMessage.Size = new System.Drawing.Size(345, 85);
+            this.tbxMessage.Size = new System.Drawing.Size(307, 69);
             this.tbxMessage.TabIndex = 1;
             this.tbxMessage.Text = "";
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(274, 551);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSend.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnSend.Location = new System.Drawing.Point(244, 441);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(84, 39);
+            this.btnSend.Size = new System.Drawing.Size(75, 31);
             this.btnSend.TabIndex = 2;
             this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click_1);
             // 
             // ChatForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 611);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(331, 489);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.tbxMessage);
             this.Controls.Add(this.tbxShowMessage);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ChatForm";
             this.Text = "ChatForm";
             this.Load += new System.EventHandler(this.ChatForm_Load);

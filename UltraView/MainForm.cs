@@ -27,6 +27,7 @@ namespace UltraView
             InitializeComponent();
             txtMyIP.Text = GetIP();
             lbStatus.Text = "Welcome..";
+            btnStatusTab2.BackColor = Color.Yellow;
         }
 
         //Tab1_Open connect for other device
@@ -61,7 +62,8 @@ namespace UltraView
             }
             return output;
         }
-
+        RemoteScreenForm rmtScrForm;
+        ChatForm chatForm;
         private void btnOpenConnect_Click_1(object sender, EventArgs e)
         {
             if (RemoteScreenFormCount != 0)//Nếu đã có 1 form mở lên rồi thì k connect nữa
@@ -75,19 +77,25 @@ namespace UltraView
                 port = int.Parse(txtMyPort.Text);
 
                 //
-                ChatForm chatForm = new ChatForm(0, txtMyIP.Text, port+1);
+                chatForm = new ChatForm(0, txtMyIP.Text, port+1);
                 chatForm.Show();
                 Writelogfile("Open connect Port: " + port + " " + DateTime.Now.ToShortTimeString());
                 lbStatus.Text = "Open connection success!";
+               // btnStatusTab1.BackColor = Color.LimeGreen;
             }
             catch
             {
                 Writelogfile("Port is not correct: " +txtMyPort.Text + DateTime.Now.ToShortTimeString());
                 
                 lbStatus.Text = "Your port is not correct!";
+                //btnStatusTab1.BackColor = Color.Yellow;
                 return;
             }
-            new RemoteScreenForm(port).Show();
+            rmtScrForm = new RemoteScreenForm(port);
+            
+            
+
+            rmtScrForm.Show();
             RemoteScreenFormCount++;
 
         }
@@ -96,7 +104,7 @@ namespace UltraView
         //Tab2_Connect to other device
         #region Tab2_Connect to other device_Có sửa đổi
 
-        private readonly TcpClient client = new TcpClient();
+        private TcpClient client;
         private NetworkStream ostream;
         private int portNumber;
         private int width;
@@ -171,8 +179,10 @@ namespace UltraView
         }
 
         private bool isConnected = false;
+        ChatForm chatForm2;
         private void btnConnect2_Click(object sender, EventArgs e)//nhớ Xét các textbox
-        {      
+        {
+            client = new TcpClient();
             Writelogfile("Try Connect " + "IP: " + txtMyIP.Text + ", Port: " + txtMyPort.Text +" "+ DateTime.Now.ToShortTimeString());
             if (intLoaiNN == 2)
             {
@@ -188,8 +198,8 @@ namespace UltraView
                 portNumber = int.Parse(txtPort2.Text);
                 client.Connect(txtIP2.Text, portNumber);
                 //
-                ChatForm chatForm = new ChatForm(1, txtIP2.Text, portNumber+1);
-                chatForm.Show();
+                chatForm2 = new ChatForm(1, txtIP2.Text, portNumber+1);
+                chatForm2.Show();
                 Writelogfile("Connected " + "IP: " + txtMyIP.Text + ", Port: " + txtMyPort.Text + " " + DateTime.Now.ToShortTimeString());
                 if (intLoaiNN == 2)
                 {
@@ -199,8 +209,9 @@ namespace UltraView
                 {
                     lbStatus.Text = "Đã kết nối..";
                 }
-                
-                if(intLoaiNN==2)
+                isConnected = true;
+                btnStatusTab2.BackColor = Color.LawnGreen;
+                if (intLoaiNN==2)
                 { 
                     MessageBox.Show("Connected!");
 
@@ -210,6 +221,7 @@ namespace UltraView
                     MessageBox.Show("Đã kết nối!");
 
                 }
+                
             }
             catch (Exception)
             {
@@ -222,14 +234,21 @@ namespace UltraView
                 {
                     lbStatus.Text = "Kết nối thất bại...";
                 }
-                
-               
+                isConnected = false;
+                btnStatusTab2.BackColor = Color.Yellow;
             }
 
         }
         //Share screen 
         private void btnShareScreen2_Click(object sender, EventArgs e)
         {
+            timeOut = 0;
+            if (!isConnected)
+            {
+                btnStatusTab2.BackColor = Color.Yellow;
+                lbStatus.Text = "No connection!";
+                return;
+            }
             
             if (txtWidth2.Text != "" || txtHeight2.Text != "")
             {
@@ -272,7 +291,7 @@ namespace UltraView
             else
             {
                 timer1.Stop();
-                btnShareScreen2.Text = "Share my screen..";
+                btnShareScreen2.Text = "Share your screen";
                 if (intLoaiNN == 2)
                 {
                     lbStatus.Text = "Stopped share screen";
@@ -283,23 +302,67 @@ namespace UltraView
                 }
                 
                 Writelogfile("StopShareScreen: " + "IP: " + txtMyIP.Text + ", Port: " + txtMyPort.Text + " " + DateTime.Now.ToShortTimeString());
-
+                
                 //StopListenText();//Stop listen
             }
         }
         //đếm giờ, cài tick của nó khoảng 40 là vừa 
+        private int timeOut = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            SendDesktopImage();
+            try
+            {
+                if (client.Connected)
+                {
+                    SendDesktopImage();
+                }
+                else
+                {
+                    timeOut++;
+                    if(timeOut==200)
+                    {
+                        try
+                        {
+                            chatForm2.StopListening();
+                            chatForm2.Close();
+                        }
+                        catch { }
+                        pauseAll();
+                        MessageBox.Show("Connection has been lost!");
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+        private void pauseAll()
+        {
+            btnShareScreen2.Text = "Share your screen";
+            client.Close();
+            client.Dispose();
+            timer1.Stop();
+            if (intLoaiNN == 2)
+            {
+                lbStatus.Text = "Stopped share screen";
+            }
+            else if (intLoaiNN == 1)
+            {
+                lbStatus.Text = "Dừng truyền màn hình...";
+            }
+            isConnected = false;
+            btnStatusTab2.BackColor = Color.Yellow;
+            Writelogfile("StopShareScreen: " + "IP: " + txtMyIP.Text + ", Port: " + txtMyPort.Text + " " + DateTime.Now.ToShortTimeString());
+
         }
 
         #endregion
 
         #region Tuan_Menu_and_Ghilog
-    
 
-     
-        
+
+
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Writelogfile("btnExitClick" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
@@ -318,7 +381,13 @@ namespace UltraView
         {
             Writelogfile("btnAboutClick" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
             lbStatus.Text = "About..";
-            MessageBox.Show("Nhóm lập trình trực quan Triple T: Nguyễn Anh Tấn 1752                       Lộc Đức Thắng 17520039                                                                          Nguyễn Văn Tuấn 17521218");
+            MessageBox.Show("UltraView" +
+                "\nTeacher: Huỳnh Tuấn Anh"
+                + "\nGroup Triple T:\nNguyễn Anh Tấn 17521013\nLộc Đức Thắng 17520039\nNguyễn Văn Tuấn 17521218"
+                + "\nContact us:fb.com/anhtannguyen1999"
+                +"\nanhtannguyen1999@gmail.com"
+                + "\ngithub.com/anhtannguyen1999/LTTQ_NhomTripleT"
+                );
         }
 
         //string logName = @"Log " + "Month " + DateTime.Now.Month.ToString() + ".txt";
@@ -682,19 +751,73 @@ namespace UltraView
 
         //Chua lam
         #region End
+        private bool checkFormOpen(string name)
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == name)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Writelogfile("BtnFormClose " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
             lbStatus.Text = "Close..";
+            
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
             try
             {
                 timer1.Stop();
                 StopListenText();
+                try
+                {
+                    client.Dispose();
+                    client.Close();
+                }
+                catch { }
+                if (checkFormOpen("RemoteScreen"))
+                {
+                    rmtScrForm.StopListening();
+                    rmtScrForm.Close();
+                }
+                if (checkFormOpen("ChatForm"))
+                {
+                    try
+                    {
+                        try
+                        {
+                            chatForm.StopListening();
+                        }
+                        catch { }
+                        try
+                        {
+                            chatForm.Close();
+                        }
+                        catch { }
+                        try
+                        {
+                            chatForm2.StopListening();
+                        }
+                        catch { }
+                        try
+                        {
+                            chatForm2.Close();
+                        }
+                        catch { }
+
+                    }
+                    catch { }
+                }
             }
             catch { }
-
         }
-
         #endregion
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -708,6 +831,65 @@ namespace UltraView
             Writelogfile("btnUpdateClick" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
             lbStatus.Text = "Update..";
         }
+
+
+        #region Ràng buộc nhập số trong textbox -Fix Bug 2
+        private void txtMyIP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.')
+            {
+                int count = 0;
+                foreach (char c in (sender as TextBox).Text)
+                {
+                    if (c == '.')
+                    {
+                        count++;
+                    }
+                }
+                if (count >= 3)
+                    e.Handled = true;
+            }
+        }
+
+        private void txtIP2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMyIP_KeyPress(sender, e);
+        }
+
+        private void txtMyPort_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPort2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMyPort_KeyPress(sender, e);
+        }
+
+        private void txtWidth2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMyPort_KeyPress(sender, e);
+        }
+
+        private void txtHeight2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMyPort_KeyPress(sender, e);
+        }
+
+
+
+        #endregion
+
+        
     }
 }
 

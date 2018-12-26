@@ -51,19 +51,28 @@ namespace UltraView
             }
             catch
             {
-                MessageBox.Show("Listening failed!");
+                //MessageBox.Show("Listening failed!");
+                StopListening();
             }
             
         }
-        private void StopListening()
-        {
-            server.Stop();
-            client = null;
-            if (Listening.IsAlive) Listening.Abort();
-            if (GetImage.IsAlive) GetImage.Abort();
-            MessageBox.Show("Disconnect success!");
-        }
         
+        public void StopListening()
+        {
+            try
+            {
+                server.Stop();
+                client.Close();
+                client = null;
+                if (Listening.IsAlive) Listening.Abort();
+
+
+                if (GetImage.IsAlive) GetImage.Abort();
+                MessageBox.Show("Disconnect success!");
+            }
+            catch { }
+        }
+
         private void ReceiveImage()
         {
             BinaryFormatter binFormatter = new BinaryFormatter();
@@ -88,6 +97,8 @@ namespace UltraView
                 }
                 catch { }               
             }
+            //Thêm để thoong báo khi bên client out
+            MessageBox.Show("Connection has been lost!");
         }
         protected override void OnLoad(EventArgs e)
         {
