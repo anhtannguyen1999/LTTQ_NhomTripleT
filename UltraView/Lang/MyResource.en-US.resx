@@ -129,6 +129,9 @@
   <data name="english" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
   <data name="fullscreen" xml:space="preserve">
     <value>If you can't see full screen please type your screen</value>
   </data>

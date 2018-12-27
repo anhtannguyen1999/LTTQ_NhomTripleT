@@ -384,9 +384,6 @@ namespace UltraView
             MessageBox.Show("UltraView" +
                 "\nTeacher: Huỳnh Tuấn Anh"
                 + "\nGroup Triple T:\nNguyễn Anh Tấn 17521013\nLộc Đức Thắng 17520039\nNguyễn Văn Tuấn 17521218"
-                + "\nContact us:fb.com/anhtannguyen1999"
-                +"\nanhtannguyen1999@gmail.com"
-                + "\ngithub.com/anhtannguyen1999/LTTQ_NhomTripleT"
                 );
         }
 
@@ -824,12 +821,16 @@ namespace UltraView
         {
             Writelogfile("btnHelpClick" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
             lbStatus.Text = "Help..";
+            MessageBox.Show("\nContact us:fb.com/anhtannguyen1999"
+                + "\nanhtannguyen1999@gmail.com"
+                + "\ngithub.com/anhtannguyen1999/LTTQ_NhomTripleT");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Writelogfile("btnUpdateClick" + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
             lbStatus.Text = "Update..";
+            new Update().Show();
         }
 
 
