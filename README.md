@@ -1,11 +1,14 @@
 # LTTQ_NhomTripleT
 Đồ án cuối kỳ môn Lập trình trực quan của nhóm TripleT- Lớp IT008.J11
+
+Phần mềm điều khiển máy tính từ xa UltraView
+
 GVHD: thầy Huỳnh Tuấn Anh.
 SV1: Nguyễn Anh Tấn-17521013
 SV2: Lộc Đức Thắng-17521039
 SV3: Nguyễn Văn Tuấn-17521218
 
-Phần mềm điều khiển máy tính từ xa UltraView
+
 
 * GIAO DIỆN CHƯƠNG TRÌNH VÀ CHỨC NĂNG CHÍNH
 1.	Màn hình giao diện chính
@@ -25,6 +28,7 @@ Help,Thoát
 
 
 2.	Chi tiết chức năng
+
 a)	Open Connect
 -	Trước khi kết nối
  
