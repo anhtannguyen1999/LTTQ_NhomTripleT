@@ -103,3 +103,58 @@ btnUpdateClickThursday, December 27, 2018 1:22:03 PM
 btnAboutClickThursday, December 27, 2018 1:22:12 PM
 btnExitClickThursday, December 27, 2018 1:22:17 PM
 BtnFormClose Thursday, December 27, 2018 1:22:17 PM
+ 
+*LOAD*Thursday, December 27, 2018 1:30:13 PM
+btnUpdateClickThursday, December 27, 2018 1:36:01 PM
+btnUpdateClickThursday, December 27, 2018 1:36:07 PM
+btnUpdateClickThursday, December 27, 2018 1:36:23 PM
+btnUpdateClickThursday, December 27, 2018 1:36:27 PM
+btnUpdateClickThursday, December 27, 2018 1:39:47 PM
+btnUpdateClickThursday, December 27, 2018 1:40:47 PM
+btnUpdateClickThursday, December 27, 2018 1:41:27 PM
+btnUpdateClickThursday, December 27, 2018 1:41:46 PM
+btnUpdateClickThursday, December 27, 2018 1:42:06 PM
+btnUpdateClickThursday, December 27, 2018 1:42:24 PM
+btnAboutClickThursday, December 27, 2018 1:46:27 PM
+BtnFormClose Thursday, December 27, 2018 1:48:10 PM
+ 
+*LOAD*Thursday, December 27, 2018 1:48:31 PM
+btnUpdateClickThursday, December 27, 2018 1:48:32 PM
+btnAboutClickThursday, December 27, 2018 1:48:38 PM
+BtnFormClose Thursday, December 27, 2018 1:51:05 PM
+ 
+*LOAD*Thursday, December 27, 2018 1:51:10 PM
+btnAboutClickThursday, December 27, 2018 1:51:13 PM
+BtnFormClose Thursday, December 27, 2018 1:51:17 PM
+ 
+*LOAD*Thursday, December 27, 2018 1:51:24 PM
+btnAboutClickThursday, December 27, 2018 1:51:26 PM
+btnUpdateClickThursday, December 27, 2018 2:37:25 PM
+BtnFormClose Thursday, December 27, 2018 2:37:31 PM
+ 
+*LOAD*Thursday, December 27, 2018 3:25:38 PM
+btnUpdateClickThursday, December 27, 2018 3:25:40 PM
+ 
+*LOAD*Thursday, December 27, 2018 3:26:36 PM
+btnUpdateClickThursday, December 27, 2018 3:26:38 PM
+BtnFormClose Thursday, December 27, 2018 3:26:48 PM
+ 
+*LOAD*Thursday, December 27, 2018 3:29:17 PM
+btnUpdateClickThursday, December 27, 2018 3:29:20 PM
+ 
+*LOAD*Thursday, December 27, 2018 7:50:26 PM
+OpenChatFormThursday, December 27, 2018 7:50:46 PM
+Open connect Port: 1999 7:50 PM
+OpenFormRemote Thursday, December 27, 2018 7:50:46 PM
+ 
+*LOAD*Thursday, December 27, 2018 10:37:32 PM
+btnUpdateClickThursday, December 27, 2018 10:37:34 PM
+BtnFormClose Thursday, December 27, 2018 10:38:03 PM
+ 
+*LOAD*Friday, December 28, 2018 10:25:56 AM
+btnUpdateClickFriday, December 28, 2018 10:25:57 AM
+BtnFormClose Friday, December 28, 2018 10:26:14 AM
+ 
+*LOAD*Friday, December 28, 2018 10:27:17 AM
+btnUpdateClickFriday, December 28, 2018 10:27:20 AM
+BtnFormClose Friday, December 28, 2018 10:27:29 AM

@@ -383,7 +383,7 @@ namespace UltraView
             lbStatus.Text = "About..";
             MessageBox.Show("UltraView" +
                 "\nTeacher: Huỳnh Tuấn Anh"
-                + "\nGroup Triple T:\nNguyễn Anh Tấn 17521013\nLộc Đức Thắng 17520039\nNguyễn Văn Tuấn 17521218"
+                + "\nGroup Triple T:\nNguyễn Anh Tấn 17521013\nLộc Đức Thắng 17521039\nNguyễn Văn Tuấn 17521218"
                 );
         }
 
