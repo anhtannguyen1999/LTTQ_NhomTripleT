@@ -13,14 +13,17 @@ SV3: Nguyễn Văn Tuấn-17521218
 * GIAO DIỆN CHƯƠNG TRÌNH VÀ CHỨC NĂNG CHÍNH
 1.	Màn hình giao diện chính
  
-STT	Tên gọi	Chức năng
 1	Open Connect	Mở kết nối để máy khác kết nối
 (Điều khiển máy khác)
+
 2	Connect	Kết nối tới máy mở kết nối
 (Để máy khác điều khiển)
+
 3	Share your screen	Truyền màn hình khi đã connect
+
 4	Option	Đổi ngôn ngữ, Thông tin phần mềm,
 Help,Thoát
+
 5	 	Thông tin phiên bản , update phần mềm
 
 
