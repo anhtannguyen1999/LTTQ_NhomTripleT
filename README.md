@@ -11,9 +11,9 @@ SV2: Lộc Đức Thắng-17521039
 
 SV3: Nguyễn Văn Tuấn-17521218
 
-# Link youtube: https://www.youtube.com/watch?v=c3QPU6xLJF4
+-> Link youtube: https://www.youtube.com/watch?v=c3QPU6xLJF4
 
-# Phiên bản khác, tốc độ nhanh hơn bằng java: https://github.com/anhtannguyen1999/my-java-ultra-view
+-> Phiên bản khác, tốc độ nhanh hơn bằng java: https://github.com/anhtannguyen1999/my-java-ultra-view
 
 
 # GIAO DIỆN CHƯƠNG TRÌNH VÀ CHỨC NĂNG CHÍNH
